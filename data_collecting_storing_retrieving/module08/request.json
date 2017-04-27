@@ -1,0 +1,92 @@
+{
+  "max_score": 13.493603,
+  "took": 4,
+  "total": 8008,
+  "hits": [
+    {
+      "_id": "chr10:g.5435865T>C",
+      "_score": 13.493603,
+      "cosmic": {
+        "alt": "G",
+        "chrom": "10",
+        "cosmic_id": "COSM131087",
+        "hg19": {
+          "end": 5435865,
+          "start": 5435865
+        },
+        "mut_freq": 16.67,
+        "mut_nt": "A>G",
+        "ref": "A",
+        "tumor_site": "liver"
+      }
+    },
+    {
+      "_id": "chr7:g.108204674T>C",
+      "_score": 13.493603,
+      "cosmic": {
+        "alt": "G",
+        "chrom": "7",
+        "cosmic_id": "COSM1622209",
+        "hg19": {
+          "end": 108204674,
+          "start": 108204674
+        },
+        "mut_freq": 33.33,
+        "mut_nt": "A>G",
+        "ref": "A",
+        "tumor_site": "liver"
+      }
+    },
+    {
+      "_id": "chr10:g.120867635A>G",
+      "_score": 13.493603,
+      "cosmic": {
+        "alt": "G",
+        "chrom": "10",
+        "cosmic_id": "COSM1603031",
+        "hg19": {
+          "end": 120867635,
+          "start": 120867635
+        },
+        "mut_freq": 12.5,
+        "mut_nt": "A>G",
+        "ref": "A",
+        "tumor_site": "liver"
+      }
+    },
+    {
+      "_id": "chr5:g.109110611A>G",
+      "_score": 13.493603,
+      "cosmic": {
+        "alt": "G",
+        "chrom": "5",
+        "cosmic_id": "COSM1619302",
+        "hg19": {
+          "end": 109110611,
+          "start": 109110611
+        },
+        "mut_freq": 4.0,
+        "mut_nt": "A>G",
+        "ref": "A",
+        "tumor_site": "liver"
+      }
+    },
+    {
+      "_id": "chr3:g.142389890A>G",
+      "_score": 13.493603,
+      "cosmic": {
+        "alt": "G",
+        "chrom": "3",
+        "cosmic_id": "COSM1726903",
+        "hg19": {
+          "end": 142389890,
+          "start": 142389890
+        },
+        "mut_freq": 6.25,
+        "mut_nt": "A>G",
+        "ref": "A",
+        "tumor_site": "liver"
+      }
+    }
+  ]
+}

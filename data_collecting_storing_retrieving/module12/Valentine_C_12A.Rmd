@@ -1,0 +1,157 @@
+---
+title: "Assignment 12A"
+author: "Clint Valentine"
+date: "April 16, 2017"
+output: pdf_document
+---
+
+```{r, message=FALSE, warning=FALSE}
+rm(list = ls())
+
+library(jsonlite)
+library(mongolite)
+library(stringr)
+```
+
+
+```{r}
+# Load in the data into one data.frame if it has not already been loaded.
+if (exists('bird.strikes') == F) {
+  unzip('Bird Strikes.zip')
+  # Escape sep = ',' in quotations
+  # Impute NA as empty strings
+  # Do not consider strings factors
+  bird.strikes <- read.table(
+    file = 'Bird Strikes.csv',
+    fill = T,
+    header = T,
+    na.strings = '',
+    quote = '\"',
+    sep = ',',
+    stringsAsFactors = F
+  )
+}
+
+# Replace periods with underscore, remove trailing underscore, and make lowercase.
+header <- gsub('_$', '', gsub('\\.+', '_', str_trim(colnames(bird.strikes))))
+header <- tolower(header)
+
+# Replace reformatted header on bird.strike data.
+colnames(bird.strikes) <- header
+```
+
+
+Insert the Bird Strikes.csv file into MongoDB
+---
+
+```{r}
+mongo <- mongo(collection='test',
+               db='test',
+               url='mongodb://localhost:27017',
+               verbose=F)
+
+mongo$insert(bird.strikes)
+```
+
+\newpage
+
+Use the export command to display the inserted file.
+---
+
+1. Data is first exported to a tempfile.
+2. Since this ouputs many valid JSON lines but not in a valid JSON array we must preprocess the information.
+3. Read into a `data.frame`.
+4. Examine results by calling `dim` and `str`.
+
+Note there is an extra column in our exported dataset which represents the unique identifer MongoDB has assigned our record.
+
+```{r, message=FALSE, warning=FALSE}
+tmp <- tempfile()
+mongo$export(file(tmp))
+exported.data <- fromJSON(sprintf("[%s]", paste(readLines(file(tmp)), collapse=",")))
+```
+```{r}
+print(dim(bird.strikes))
+print(dim(exported.data))
+```
+
+
+```{r}
+str(exported.data, width=80, strict.width='cut')
+```
+
+Fetch the unique airport names from the database
+---
+
+```{r}
+airports <- mongo$distinct('airport_name')
+cat("There are", length(airports), "unique airport names.\n\n")
+cat("Here are the first ten:\n\n")
+print(head(airports, 10))
+```
+
+Count the number of records where `origin_state` equals "New Jersey".
+---
+```{r}
+query <- '{
+  "origin_state": "New Jersey"
+}'
+
+num_new_jersey <- mongo$count(query)
+cat("There are", num_new_jersey, "records where `origin_state` = New Jersey.")
+```
+
+\newpage
+
+Fetch the data with `conditions_precipitation` being fog and sort the data in descending order of `record_id`.
+---
+
+```{r}
+query <- '{
+  "conditions_precipitation": "Fog"
+}'
+
+sort <- '{
+  "record_id": -1
+}'
+
+records <- mongo$find(query=query, sort=sort)
+cat("There are", nrow(records), "records with `conditions_precipitation` as Fog.\n\n")
+cat("Are the records sorted in descending order of `record_id`?",
+    all.equal(records$record_id,
+              rev(sort(records$record_id))))
+```
+
+\newpage
+
+Fetch only the following columns for `aircraft_airline_operator`
+---
+
+Query:
+
+`aircraft_airline_operator` = "AMERICAN AIRLINES" OR "CONTINENTAL AIRLINES"
+
+Columns to include:
+
+- `record_id`
+- `origin_state`
+- `aircraft_airline_operator`
+- `airport_name`
+
+```{r}
+query = '{
+  "aircraft_airline_operator": { "$in": ["AMERICAN AIRLINES", "CONTINENTAL AIRLINES"]}
+}'
+
+fields = '{
+  "_id": 0,
+  "record_id": 1,
+  "origin_state": 1,
+  "aircraft_airline_operator": 1,
+  "airport_name": 1
+}'
+
+records <- mongo$find(query=query, fields=fields)
+cat("There are", nrow(records), "records for `AMERICAN AIRLINES`/`CONTINENTAL AIRLINES`.")
+print(head(records))
+```
