@@ -1,0 +1,401 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>Problem Set 1</title><meta name="generator" content="MATLAB 8.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2015-02-06"><meta name="DC.source" content="ps1.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>Problem Set 1</h1><!--introduction--><pre>Clint Valentine
+February 6th 2015
+Biomolecular Control and Dynamics
+Prof. Anand Asthagiri</pre><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Phase Portrait of the EGF Receptor-Ligand Interaction</a></li><li><a href="#4">Plotting <img src="ps1_eq11776305044305525613.png" alt="$u$"> as a Function of <img src="ps1_eq14593889327204786447.png" alt="$\tau$"> and Detecting the Time at 90% EGF Steady-State</a></li><li><a href="#10">Kinetic Models for the Bivalent Receptor Model PDGF</a></li><li><a href="#11">Elementary Reactions for a Dimer Ligand and Bivalent Receptor</a></li></ul></div><h2>Phase Portrait of the EGF Receptor-Ligand Interaction<a name="1"></a></h2><p>The formation of the complex can be modeled using the equation:</p><p><img src="ps1_eq15620532494660555315.png" alt="$u(\tau) = \frac{L_{o}}{K_{d}}(1-\eta u)(1-u)$"></p><p>The dissociation of the the complex can be modeled using the equation:</p><p><img src="ps1_eq00227109508352082776.png" alt="$u(\tau) = u$"></p><p>The following code generates a phase portrait for the receptor-ligand interaction interaction of EGF binding to EGF receptor. Fixed points that are stable are labeled with a solid circle. Fixed points that are unstable are labeled with a hollow circle.</p><p>Conditions:</p><p><img src="ps1_eq03496394942395540656.png" alt="$\frac{L_{o}}{K_{d}} = 1$"></p><p><img src="ps1_eq13781821958479336269.png" alt="$\eta = 2$"></p><pre class="codeinput">warning(<span class="string">'off'</span>, <span class="string">'all'</span>) <span class="comment">% Avoid warnings of imaginary numbers</span>
+
+sat = 1;   <span class="comment">% Lo/Kd</span>
+eta = 2.0; <span class="comment">% (n*Rt)/(Lo*Avagadro)</span>
+
+syms <span class="string">u</span>;
+roots = solve(sat * (1 - (eta * u)) * (1 - u) == u, <span class="string">'u'</span>);
+
+tau = 0:.001:2;
+y1 = tau;
+y2 = sat .* (1 - (eta .* tau)) .* (1 - tau);
+
+figure;
+plot(tau, y1, tau, y2, roots(1), roots(1), <span class="string">'ro'</span>,<span class="keyword">...</span>
+     <span class="string">'MarkerFaceColor'</span>, <span class="string">'r'</span>, <span class="string">'MarkerSize'</span>, 4);
+
+axis([0, 1, -1, 2]);
+axis(<span class="string">'on'</span>);
+grid(<span class="string">'on'</span>);
+
+h = xlabel(<span class="string">'$u$'</span>, <span class="string">'FontSize'</span>, 16);
+set(h, <span class="string">'Interpreter'</span>, <span class="string">'latex'</span>);
+h = ylabel(<span class="string">'$du/d\tau$'</span>, <span class="string">'FontSize'</span>, 16);
+set(h, <span class="string">'Interpreter'</span>, <span class="string">'latex'</span>);
+legend(<span class="string">'Dissociation'</span>, <span class="string">'Formation'</span>, <span class="string">'Equilibrium'</span>,<span class="keyword">...</span>
+       <span class="string">'location'</span>, <span class="string">'northwest'</span>);
+h = title(<span class="string">'Phase Portrait of EGF Binding to EGF Receptor'</span>, <span class="string">'FontSize'</span>, 12);
+set(h, <span class="string">'Interpreter'</span>, <span class="string">'latex'</span>);
+
+strconst = <span class="string">'$\frac{Lo}{Kd} = 1, \eta = 2$'</span>;
+h = text(0.35, 1.7, strconst, <span class="string">'HorizontalAlignment'</span>, <span class="string">'left'</span>);
+set(h, <span class="string">'Interpreter'</span>, <span class="string">'latex'</span>);
+
+xL = xlim;
+line(xL, [0 0], <span class="string">'color'</span>, <span class="string">'k'</span>);  <span class="comment">%x-axis</span>
+</pre><img vspace="5" hspace="5" src="ps1_01.png" alt=""> <p>The phase portrait shown above shows one fixed point for the system in the physical domain. This point is stable because when <img src="ps1_eq11776305044305525613.png" alt="$u$"> is of a lesser value than the fixed point, formation of the complex is at a higher rate than dissociation of the complex which drives <img src="ps1_eq11776305044305525613.png" alt="$u$"> higher. The opposite is also true. When the value of <img src="ps1_eq11776305044305525613.png" alt="$u$"> is greater than the stable point, the rate of dissociation of the complex is greater than the rate of formation of the complex which drives <img src="ps1_eq11776305044305525613.png" alt="$u$"> lower.</p><p>The stable equilibrium point can be found at:</p><pre class="codeinput">fprintf(<span class="string">'u = %g      '</span>, eval(subs(roots(1))));
+fprintf(<span class="string">'du/dtau = %g\n'</span>, eval(subs(roots(1))));
+</pre><pre class="codeoutput">u = 0.292893      du/dtau = 0.292893
+</pre><h2>Plotting <img src="ps1_eq11776305044305525613.png" alt="$u$"> as a Function of <img src="ps1_eq14593889327204786447.png" alt="$\tau$"> and Detecting the Time at 90% EGF Steady-State<a name="4"></a></h2><p>This method was my first attempt which failed.</p><pre class="codeinput"><span class="comment">% ode1=@(u, t)sat*(1-eta(1)*u)*(1-u)-u;</span>
+<span class="comment">% ode2=@(u, t)sat*(1-eta(2)*u)*(1-u)-u;</span>
+<span class="comment">% ode3=@(u, t)sat*(1-eta(3)*u)*(1-u)-u;</span>
+
+<span class="comment">% [u1, t1]=ode45(ode1, 0:0.01:10, 0.1);</span>
+<span class="comment">% [u2, t2]=ode45(ode2, 0:0.01:10, 0.1);</span>
+<span class="comment">% [u3, t3]=ode45(ode3, 0:0.01:10, 0.1);</span>
+</pre><p>This was my second attempt and I found a useful solution. The solution to this differential equation can not simply be solved in terms of elementary functions. First, <img src="ps1_eq11537469382332589804.png" alt="$u(\tau)$"> is described symbolically and a solution is found for all values of <img src="ps1_eq17615028512695387165.png" alt="$\eta$">. The limit as <img src="ps1_eq11805488126504132691.png" alt="$\tau\to\infty$"> is then found and the differential equation solutions are then solved for 90% the asymptote value.</p><p>Conditions:</p><p><img src="ps1_eq09104831893325400275.png" alt="$\frac{Lo}{Kd} = 1$"></p><p><img src="ps1_eq01120643227389827978.png" alt="$u(0) = 0.1$"></p><p><img src="ps1_eq12887153804859352689.png" alt="$\eta = [0.1, 1.0, 10.0]$"></p><pre class="codeinput">Kr = 0.12; <span class="comment">% units: 1/min</span>
+eta = [0.1, 1.0, 10.0];
+
+syms <span class="string">u(t)</span>;
+a = dsolve(diff(u,t) == sat*(1-eta(1)*u)*(1-u)-u, u(0) == 0.1);
+b = dsolve(diff(u,t) == sat*(1-eta(2)*u)*(1-u)-u, u(0) == 0.1);
+c = dsolve(diff(u,t) == sat*(1-eta(3)*u)*(1-u)-u, u(0) == 0.1);
+
+alim90 = 0.9 * limit(a, inf); <span class="comment">% Find asymptote and find 90% or 110%</span>
+blim90 = 0.9 * limit(b, inf);
+clim90 = 1.1 * limit(c, inf);
+
+lim_timea = solve(a == alim90); <span class="comment">% Solve tau for 90% asymptote</span>
+lim_timeb = solve(b == blim90);
+lim_timec = solve(c == clim90);
+
+tau = linspace(0, 3, 10000); <span class="comment">% Build tau axis</span>
+
+a1 = matlabFunction(a);
+y1 = a1(tau);
+b1 = matlabFunction(b);
+y2 = b1(tau);
+c1 = matlabFunction(c);
+y3 = c1(tau);
+
+figure;
+plot(tau, y1, <span class="string">'m'</span>, tau, y2, <span class="string">'b'</span>, tau, y3, <span class="string">'r'</span>);
+hold <span class="string">on</span>;
+
+plot(lim_timea, alim90, <span class="string">'r*'</span>, <span class="string">'MarkerSize'</span>, 5);
+plot(lim_timeb, blim90, <span class="string">'r*'</span>, <span class="string">'MarkerSize'</span>, 5);
+plot(lim_timec, clim90, <span class="string">'r*'</span>, <span class="string">'MarkerSize'</span>, 5);
+
+axis([0, 3, 0, 0.6]);
+axis(<span class="string">'on'</span>);
+grid(<span class="string">'on'</span>);
+
+h = xlabel(<span class="string">'$\tau$'</span>, <span class="string">'FontSize'</span>, 16);
+set(h, <span class="string">'Interpreter'</span>, <span class="string">'latex'</span>);
+h = ylabel(<span class="string">'$u(\tau)$'</span>, <span class="string">'FontSize'</span>, 16);
+set(h, <span class="string">'Interpreter'</span>, <span class="string">'latex'</span>);
+legend(<span class="string">'\eta = 0.1'</span>, <span class="string">'\eta = 1.0'</span>, <span class="string">'\eta = 10.0'</span>, <span class="string">'90% steady-state'</span>, <span class="string">'location'</span>, <span class="string">'northwest'</span>);
+h = title(<span class="string">'Fraction of Receptors in Complex'</span>, <span class="string">'FontSize'</span>, 12);
+set(h, <span class="string">'Interpreter'</span>, <span class="string">'latex'</span>);
+</pre><img vspace="5" hspace="5" src="ps1_02.png" alt=""> <p>The following code prints the dimensionalized time at which the system has reached 90% steady-state under the three values of <img src="ps1_eq17615028512695387165.png" alt="$\eta$">.</p><pre class="codeinput">fprintf(<span class="string">'eta = 0.1,  time = %g minutes\n'</span>, eval(lim_timea / Kr));
+fprintf(<span class="string">'eta = 1.0,  time = %g minutes\n'</span>, eval(lim_timeb / Kr));
+fprintf(<span class="string">'eta = 10.0, time = %g minutes\n'</span>, eval(lim_timec / Kr));
+</pre><pre class="codeoutput">eta = 0.1,  time = 8.55714 minutes
+eta = 1.0,  time = 7.07052 minutes
+eta = 10.0, time = 0.0778756 minutes
+</pre><h2>Kinetic Models for the Bivalent Receptor Model PDGF<a name="10"></a></h2><p>Constants to be considered:</p><p><img src="ps1_eq05038161246819775919.png" alt="$L_{o}$"> = ligand concentration <img src="ps1_eq06556717961794598623.png" alt="$(\frac{mol}{vol.})$"></p><p><img src="ps1_eq11904963258706611165.png" alt="$L$"> = free ligand</p><p><img src="ps1_eq03520043682187480064.png" alt="$R_{t}$"> = total receptors in cell</p><p><img src="ps1_eq02807975614178038273.png" alt="$R_{1}$"> = free first valency of receptors</p><p><img src="ps1_eq00024326450420931607.png" alt="$R_{2}$"> = free second valency of receptors</p><p><img src="ps1_eq03986222445007418011.png" alt="$C$"> = total complexes in cell with both valencies filled</p><p>The elementary reactions for the system of a monovalent ligand binding to a bivalent receptor are as follows. The assumptions of this system is that both valencies on the receptor have an equal opportunity of binding a ligand</p><p><img src="ps1_eq15900462809447624857.png" alt="$$R_{1} + R_{2} + 2L \rightleftharpoons C$$"></p><p>The formation rate of <img src="ps1_eq03986222445007418011.png" alt="$C$"> can be modeled using the diff.equation:</p><p><img src="ps1_eq15792527790618073043.png" alt="$\frac{dC}{dt} = k_{f}R_{1}R_{2}[L] - k_{r}C$"></p><p>Since <img src="ps1_eq02807975614178038273.png" alt="$R_{1}$"> and <img src="ps1_eq00024326450420931607.png" alt="$R_{2}$"> are equally likely to bind a ligand we can assume:</p><p><img src="ps1_eq16198370504451938305.png" alt="$$R_{1} + R_{2} = 2R$$"></p><p>Our new rate law becomes:</p><p><img src="ps1_eq07774700961519825454.png" alt="$\frac{dC}{dt} = k_{f}R^{2}[L] - k_{r}C$"></p><p>These mass balances can then be used to put the rate law in terms of the state variable:</p><p><img src="ps1_eq05427647192856316480.png" alt="$$R = \frac{R_{t} - C}{2}$$"></p><p><img src="ps1_eq10192685955084675386.png" alt="$$[L] = L_{o} - C\frac{n}{N_{A}}$$"></p><p>Our new rate law becomes:</p><p><img src="ps1_eq07580197565752234652.png" alt="$$\frac{dC}{dt} = k_{f}(R_{t} - C)^{2}(L_{o} - C\frac{n}{N_{A}}) - k_{r}C$$"></p><p>Non-dimensionalization is achieved with the following equivalencies:</p><p><img src="ps1_eq06153713597320364427.png" alt="$$u = \frac{C}{R_{t}}$$"></p><p><img src="ps1_eq16110744234545210174.png" alt="$$\tau = K_{r}t$$"></p><p>The final bivalent receptor kinetic model for this system is:</p><p><img src="ps1_eq02436020515171150851.png" alt="$$\frac{du}{d\tau} = \frac{L_{o}}{K_{d}} \frac{(1 - u)^{2}}{4} (1 -&#xA;u) - u$$"></p><h2>Elementary Reactions for a Dimer Ligand and Bivalent Receptor<a name="11"></a></h2><p>In these three elementary reactions a dimer is formed and then binds both binding sites in the receptor siultaneously.</p><p><img src="ps1_eq09749645969778530351.png" alt="$$L + L \rightleftharpoons Dimer_{AB}$$"></p><p><img src="ps1_eq08608183443501058988.png" alt="$$Dimer_{AB} + R_{A'B'} \rightleftharpoons C$$"></p><p>In the following example the <img src="ps1_eq05147331747641807187.png" alt="$A$"> site of the dimer then binds the <img src="ps1_eq02031568807983318115.png" alt="$A'$"> site on the receptor. The <img src="ps1_eq10170753361147586657.png" alt="$B$"> site of the dimer then binds the <img src="ps1_eq11337040973109417787.png" alt="$B'$"> site of the receptor forming the complex.</p><p><img src="ps1_eq09749645969778530351.png" alt="$$L + L \rightleftharpoons Dimer_{AB}$$"></p><p><img src="ps1_eq00655879628550204050.png" alt="$$Dimer_{A} + R_{A'} \rightleftharpoons Dimer_{B} + R_{B'}&#xA;\rightleftharpoons C$$"></p><p>This example is the same as the one above only the <img src="ps1_eq10170753361147586657.png" alt="$B$"> domain of the ligand binds the binding site <img src="ps1_eq11337040973109417787.png" alt="$B'$"> first and then the <img src="ps1_eq05147331747641807187.png" alt="$A$"> domain binds the <img src="ps1_eq02031568807983318115.png" alt="$A'$"> site.</p><p><img src="ps1_eq09749645969778530351.png" alt="$$L + L \rightleftharpoons Dimer_{AB}$$"></p><p><img src="ps1_eq07782975374492722873.png" alt="$$Dimer_{B} + R_{B'} \rightleftharpoons Dimer_{A} + R_{A'}&#xA;\rightleftharpoons C$$"></p><p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2014b</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% Problem Set 1
+%  Clint Valentine
+%  February 6th 2015
+%  Biomolecular Control and Dynamics
+%  Prof. Anand Asthagiri
+%% Phase Portrait of the EGF Receptor-Ligand Interaction
+% The formation of the complex can be modeled using the equation:
+%
+% $u(\tau) = \frac{L_{o}}{K_{d}}(1-\eta u)(1-u)$ 
+%
+% The dissociation of the the complex can be modeled using the equation:
+%
+% $u(\tau) = u$
+%
+% The following code generates a phase portrait for the receptor-ligand
+% interaction interaction of EGF binding to EGF receptor.
+% Fixed points that are stable are labeled with a solid circle. Fixed
+% points that are unstable are labeled with a hollow circle.
+%
+% Conditions:
+%
+% $\frac{L_{o}}{K_{d}} = 1$
+%
+% $\eta = 2$
+%%
+warning('off', 'all') % Avoid warnings of imaginary numbers
+
+sat = 1;   % Lo/Kd
+eta = 2.0; % (n*Rt)/(Lo*Avagadro)
+
+syms u;
+roots = solve(sat * (1 - (eta * u)) * (1 - u) == u, 'u');
+
+tau = 0:.001:2;
+y1 = tau;
+y2 = sat .* (1 - (eta .* tau)) .* (1 - tau);
+
+figure;
+plot(tau, y1, tau, y2, roots(1), roots(1), 'ro',...
+     'MarkerFaceColor', 'r', 'MarkerSize', 4);
+
+axis([0, 1, -1, 2]);
+axis('on');
+grid('on');
+
+h = xlabel('$u$', 'FontSize', 16);
+set(h, 'Interpreter', 'latex');
+h = ylabel('$du/d\tau$', 'FontSize', 16);
+set(h, 'Interpreter', 'latex');
+legend('Dissociation', 'Formation', 'Equilibrium',...
+       'location', 'northwest');
+h = title('Phase Portrait of EGF Binding to EGF Receptor', 'FontSize', 12);
+set(h, 'Interpreter', 'latex');
+
+strconst = '$\frac{Lo}{Kd} = 1, \eta = 2$';
+h = text(0.35, 1.7, strconst, 'HorizontalAlignment', 'left');
+set(h, 'Interpreter', 'latex');
+
+xL = xlim;
+line(xL, [0 0], 'color', 'k');  %x-axis
+%%
+% The phase portrait shown above shows one fixed point for the
+% system in the physical domain.
+% This point is stable because when $u$ is of a lesser value than the
+% fixed point, formation of the complex is at a higher rate than
+% dissociation of the complex which drives $u$ higher. The opposite is also
+% true. When the value of $u$ is greater than the stable point, the
+% rate of dissociation of the complex is greater than the rate of formation
+% of the complex which drives $u$ lower.
+%
+% The stable equilibrium point can be found at:
+fprintf('u = %g      ', eval(subs(roots(1))));
+fprintf('du/dtau = %g\n', eval(subs(roots(1))));
+%% Plotting $u$ as a Function of $\tau$ and Detecting the Time at 90% EGF Steady-State
+% This method was my first attempt which failed.
+%%
+
+% ode1=@(u, t)sat*(1-eta(1)*u)*(1-u)-u;
+% ode2=@(u, t)sat*(1-eta(2)*u)*(1-u)-u;
+% ode3=@(u, t)sat*(1-eta(3)*u)*(1-u)-u;
+
+% [u1, t1]=ode45(ode1, 0:0.01:10, 0.1);
+% [u2, t2]=ode45(ode2, 0:0.01:10, 0.1);
+% [u3, t3]=ode45(ode3, 0:0.01:10, 0.1);
+%%
+% This was my second attempt and I found a useful solution. The solution
+% to this differential equation can not simply be solved in terms of
+% elementary functions. First, $u(\tau)$ is described symbolically and a
+% solution is found for all values of $\eta$. The limit as
+% $\tau\to\infty$ is then found and the differential equation
+% solutions are then solved for 90% the asymptote value.
+%
+% Conditions:
+%
+% $\frac{Lo}{Kd} = 1$
+%
+% $u(0) = 0.1$
+%
+% $\eta = [0.1, 1.0, 10.0]$
+%%
+Kr = 0.12; % units: 1/min
+eta = [0.1, 1.0, 10.0];
+
+syms u(t);
+a = dsolve(diff(u,t) == sat*(1-eta(1)*u)*(1-u)-u, u(0) == 0.1);
+b = dsolve(diff(u,t) == sat*(1-eta(2)*u)*(1-u)-u, u(0) == 0.1);
+c = dsolve(diff(u,t) == sat*(1-eta(3)*u)*(1-u)-u, u(0) == 0.1);
+
+alim90 = 0.9 * limit(a, inf); % Find asymptote and find 90% or 110%
+blim90 = 0.9 * limit(b, inf);
+clim90 = 1.1 * limit(c, inf);
+
+lim_timea = solve(a == alim90); % Solve tau for 90% asymptote 
+lim_timeb = solve(b == blim90);
+lim_timec = solve(c == clim90);
+
+tau = linspace(0, 3, 10000); % Build tau axis
+
+a1 = matlabFunction(a);
+y1 = a1(tau);
+b1 = matlabFunction(b);
+y2 = b1(tau);
+c1 = matlabFunction(c);
+y3 = c1(tau);
+
+figure;
+plot(tau, y1, 'm', tau, y2, 'b', tau, y3, 'r');
+hold on;
+
+plot(lim_timea, alim90, 'r*', 'MarkerSize', 5);
+plot(lim_timeb, blim90, 'r*', 'MarkerSize', 5);
+plot(lim_timec, clim90, 'r*', 'MarkerSize', 5);
+
+axis([0, 3, 0, 0.6]);
+axis('on');
+grid('on');
+
+h = xlabel('$\tau$', 'FontSize', 16);
+set(h, 'Interpreter', 'latex');
+h = ylabel('$u(\tau)$', 'FontSize', 16);
+set(h, 'Interpreter', 'latex');
+legend('\eta = 0.1', '\eta = 1.0', '\eta = 10.0', '90% steady-state', 'location', 'northwest');
+h = title('Fraction of Receptors in Complex', 'FontSize', 12);
+set(h, 'Interpreter', 'latex');
+%%
+% The following code prints the dimensionalized time at which the system
+% has reached 90% steady-state under the three values of $\eta$.
+%%
+fprintf('eta = 0.1,  time = %g minutes\n', eval(lim_timea / Kr));
+fprintf('eta = 1.0,  time = %g minutes\n', eval(lim_timeb / Kr));
+fprintf('eta = 10.0, time = %g minutes\n', eval(lim_timec / Kr));
+%% Kinetic Models for the Bivalent Receptor Model PDGF
+%
+% Constants to be considered:
+%
+% $L_{o}$ = ligand concentration $(\frac{mol}{vol.})$
+%
+% $L$ = free ligand
+%
+% $R_{t}$ = total receptors in cell
+%
+% $R_{1}$ = free first valency of receptors
+%
+% $R_{2}$ = free second valency of receptors
+%
+% $C$ = total complexes in cell with both valencies filled
+%
+% The elementary reactions for the system of a monovalent ligand binding to
+% a bivalent receptor are as follows. The assumptions of this system is that
+% both valencies on the receptor have an equal opportunity of binding a ligand
+% 
+% $$R_{1} + R_{2} + 2L \rightleftharpoons C$$
+%
+% The formation rate of $C$ can be modeled using the diff.equation:
+%
+% $\frac{dC}{dt} = k_{f}R_{1}R_{2}[L] - k_{r}C$
+%
+% Since $R_{1}$ and $R_{2}$ are equally likely to bind a ligand we can assume:
+%
+% $$R_{1} + R_{2} = 2R$$
+%
+% Our new rate law becomes:
+%
+% $\frac{dC}{dt} = k_{f}R^{2}[L] - k_{r}C$
+%
+% These mass balances can then be used to put the rate law in terms of the
+% state variable:
+%
+% $$R = \frac{R_{t} - C}{2}$$
+%
+% $$[L] = L_{o} - C\frac{n}{N_{A}}$$
+%
+% Our new rate law becomes:
+%
+% $$\frac{dC}{dt} = k_{f}(R_{t} - C)^{2}(L_{o} - C\frac{n}{N_{A}}) - k_{r}C$$
+%
+% Non-dimensionalization is achieved with the following equivalencies:
+%
+% $$u = \frac{C}{R_{t}}$$
+%
+% $$\tau = K_{r}t$$
+%
+% The final bivalent receptor kinetic model for this system is:
+%
+% $$\frac{du}{d\tau} = \frac{L_{o}}{K_{d}} \frac{(1 - u)^{2}}{4} (1 -
+% u) - u$$
+%% Elementary Reactions for a Dimer Ligand and Bivalent Receptor
+% In these three elementary reactions a dimer is formed and then binds both
+% binding sites in the receptor siultaneously.
+%
+% $$L + L \rightleftharpoons Dimer_{AB}$$
+%
+% $$Dimer_{AB} + R_{A'B'} \rightleftharpoons C$$
+%
+% In the following example the $A$ site of the dimer then binds the $A'$
+% site on the receptor. The $B$ site of the dimer then binds the $B'$ site of
+% the receptor forming the complex.
+%
+% $$L + L \rightleftharpoons Dimer_{AB}$$
+%
+% $$Dimer_{A} + R_{A'} \rightleftharpoons Dimer_{B} + R_{B'}
+% \rightleftharpoons C$$
+%
+% This example is the same as the one above only the $B$ domain of the ligand
+% binds the binding site $B'$ first and then the $A$ domain binds the $A'$
+% site.
+%
+% $$L + L \rightleftharpoons Dimer_{AB}$$
+%
+% $$Dimer_{B} + R_{B'} \rightleftharpoons Dimer_{A} + R_{A'}
+% \rightleftharpoons C$$
+##### SOURCE END #####
+--></body></html>

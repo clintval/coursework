@@ -1,0 +1,5 @@
+
+Hypothesis: Estrogen/Testosterone are the variables for Aflatoxin mutagenic potential. Estrogen has been shown to be an anti-inflammatory. Pregnant mouse should have a lower baseline than non-pregnant mouse.
+
+Home wants to examine female dosed at Day 1 and sac at 10 wks. compared with
+    Pregnant mouse dose at G.D. 14 and sac at G.D. 10 wks.

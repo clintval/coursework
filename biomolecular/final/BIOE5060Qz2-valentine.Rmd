@@ -1,0 +1,106 @@
+---
+title: "Quiz 2"
+author: "Clint Valentine"
+header-includes:
+  - \usepackage{multicol}
+  - \renewcommand{\theenumi}{\Alph{enumi}}
+output: pdf_document
+---
+
+Non-Linear Second-Order Systems
+-------------------------------
+
+To find the fixed point(s) of this system we first find the two nullclines. The nullclines can be found by setting each rate equation to zero. The fixed point(s) exist at the solution(s) to the nullclines. From this derviation we find one fixed point at $(1, 1)$.
+
+$$\dot{x} = x(3 - x - 2y)$$
+
+$$\dot{y} = y(2 - x - y)$$
+
+$$\dot{x} = - x^{2} + 3x - 2xy = 0$$
+
+$$y = -\frac{1}{2}x + \frac{3}{2}$$
+
+$$\dot{y} =- y^{2} + 2y - xy = 0$$
+
+$$y = -x +2$$
+
+$$-x +2 = -\frac{1}{2}x + \frac{3}{2}$$
+
+\begin{center}$x = 1$ and $y = 1$\end{center}
+
+
+Next, we express the system in matrix form at the fixed point. Below is
+the Jacobian matrix of the system at the $(1,1)$ fixed point. A fixed point will be stable if both eigenvalues have negative real parts. An eigenanalysis of the Jacobian is presented below. The stability analysis about the fixed point is unstable in all inital conditions except for the monotonically stable initial conditions found on the the eigenvector associated with the negative eigenvalue ($\lambda_{2}$). This is known as a saddle point.
+
+$$
+\mathbf{J} =
+\left[ {\begin{array}{cc}
+\frac{\partial f_{1}}{\partial x}&\frac{\partial f_{1}}{\partial y}\\
+\frac{\partial f_{2}}{\partial x}&\frac{\partial f_{2}}{\partial y}
+\end{array} } \right] =
+\left[ {\begin{array}{cc}
+-2x -2y + 3 & -2x\\
+-y & -x -2y + 2
+\end{array} } \right] =
+\left[ {\begin{array}{cc}
+-1 & -2\\
+-1 & -1
+\end{array} } \right]
+$$
+
+$$\lambda_{i} = \frac{\tau \pm \sqrt{\tau^{2} - 4\Delta}}{2}$$
+
+$$\textrm{where} \ \ \tau = \textrm{trace}(\mathbf{J}) \ \ \textrm{and} \ \ \Delta = \textrm{det}(\mathbf{J})$$
+
+$$\lambda_{i} = \frac{-2 \pm \sqrt{4 - 4(1 - 2)}}{2} = \frac{-2 \pm 2\sqrt{2}}{2} = -1 \pm \sqrt{2}$$
+
+$$\lambda_{1} = -1 + \sqrt{2} \approx 0.414 \ \ \textrm{and} \ \ \lambda_{2} = -1 - \sqrt{2} \approx -2.414$$
+
+\newpage
+
+
+Non-Linear First-Order System
+-----------------------------
+
+````{r fig.width=6, fig.height=5, echo=FALSE}
+source('http://faraway.neu.edu/data/cb.R')
+x = seq(-5, 5, length=1000)
+y = x - cos(x)
+plot(x=x, y=y, type='l', xaxt='n', yaxt='n', ann=FALSE, col=cb.blue, yaxs='i', xaxs='i', xlab=expression(x))
+
+text(x=-6.3, y=0, expression(over(dx, dt)), xpd=TRUE, srt=0, cex=0.8)
+text(x=0, y=-7.2, expression(x), xpd=TRUE, srt=0, cex=0.8)
+
+abline(h=0, lty=2, col=cb.grey)
+abline(v=0, lty=2, col=cb.grey)
+
+axis(1, at=0, labels='0', cex.axis=0.8)
+axis(2, at=0, labels='0', cex.axis=0.8)
+```
+
+$$\dot{x} = x - cos(x)$$
+
+The non-linear first-order system is sketched in the plot above using a few points found by hand. There is one fixed point where the function intercepts the x-axis in the positive x domain. This point describes the only value of x where there is no rate of change in x.
+
+The fixed point is unstable. Any initial condition to the left of the fixed point will have a negative rate which will push the system farther to the left. Any initial condition to the right of the fixed point will have a positive rate which will push the system farther to right.
+
+True or False
+-------------
+
+
+\begin{multicols}{2}
+\begin{enumerate}
+    \item True
+    \item True
+    \item True
+    \item True
+    \item True
+    \item True
+    \item False
+    \item True
+    \item True
+    \item False
+    \item True
+\end{enumerate}
+\end{multicols}
+

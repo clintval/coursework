@@ -1,0 +1,46 @@
+\documentclass{article}
+\begin{document}
+
+\noindent
+Clint Valentine
+
+\noindent
+April 22 2015
+
+\vfill
+
+\noindent
+First, we find the nullclines of the system:
+$$\frac{dm_{i}}{dt}=-m_{i}+\frac{\alpha}{(1+p^{n}_{j})}+\alpha_{o}=0$$
+$$\dot{p}=\dot{m}$$
+$$\frac{dp_{i}}{dt}=-\beta(p_{i}-m_{i})=0$$
+$$\dot{m}=\frac{\alpha}{(1 + \dot{p}^{n})}+\alpha_{o}$$
+Next, we express the system in matrix form at the fixed point.
+This is the Jacobian matrix of the system at the non-trivial fixed point:
+$$
+\mathbf{J}=
+\left[{\begin{array}{*{20}c}
+\frac{\partial{f_{1}}}{\partial{m}}&\frac{\partial{f_{1}}}{\partial{p}}\\
+\frac{\partial{f_{2}}}{\partial{m}}&\frac{\partial{f_{2}}}{\partial{p}}
+\end{array}}\right]=
+\left[{\begin{array}{*{20}c}
+-1&X\\
+\beta&-\beta
+\end{array}}\right]
+$$
+$$X\equiv-\frac{\alpha{}n\dot{p}^{n-1}}{(1+\dot{p}^n)^2}$$
+$$\dot{p}=\frac{\alpha}{(1+\dot{p}^{n})}+\alpha_{o}$$
+To derive the conditional for instability as expressed in the Elowitz and
+Leibler (2000) paper we must find the the condition when the eigenvalues
+have imaginary parts. The eigenvalues will have an imaginary part when
+the discriminant of the Jacobian is negative.
+$$\tau^{2}-4\Delta<0$$
+$$(-1-\beta)^{2}-4(\beta-X\beta)<0$$
+$$\frac{(\beta+1)^{2}}{\beta}<4(-X+1)$$
+This expression is different than the Elowitz and Leibler (2000)
+expression found in Box 1:
+$$\frac{(\beta+1)^{2}}{\beta}<\frac{3X^{2}}{4+2X}$$
+
+\vfill
+\end{document}
+

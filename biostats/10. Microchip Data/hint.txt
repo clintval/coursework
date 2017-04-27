@@ -1,0 +1,14 @@
+Dear students,
+
+I know one of you talked to me about this. If you didn't have any issues with this, you may ignore this. Please don't fix anything if nothing is broken in the first place.
+
+library(ArrayExpress)
+yeast.raw = ArrayExpress('E-MEXP-1551')
+
+This should have got an AffyBatch object into yeast.raw.  The code import into an ExpressionSet object instead of the AffyBatch object.
+There seems to be some problem with the updated version of the bioconductor's library.  But it seems to be some problem with the ArrayExpressidentifier. Solve the issue by downloading the files locally first, and then read it using ReadAffy() instead.  Please try the following commands if you had similar trouble. (You need to create the folder Cyeast first on PC.)
+
+library(ArrayExpress);library(affy)
+getAE('E-MEXP-1551', path = 'Cyeast',  type = full)
+
+yeast.raw -  ReadAffy(celfile.path= 'Cyeast' )

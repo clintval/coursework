@@ -1,0 +1,356 @@
+\documentclass[12pt]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage[doublespacing]{setspace}
+\usepackage{graphicx} % Places images
+\usepackage{mathpazo} % Font
+\usepackage{fixltx2e} % Subscript Fix
+\usepackage{hyperref} % Subscript Fix
+\usepackage{textcomp} % Prevents gensymb package warning
+\usepackage{gensymb}  % Degree Symbol
+\usepackage{apacite}  % Style bibliography
+\usepackage{etoolbox}
+\usepackage{environ}
+\usepackage{sectsty}
+\usepackage{setspace} % Allow for single spacing in Literature Cited
+\usepackage{hyperref} % Hyperlinks
+\usepackage{bold-extra}
+\usepackage{comment}
+
+
+
+\AtBeginDocument{
+    \let\cite\shortcite %  One-two author and then et al.
+    \renewcommand{\BBAY}{ } % Spaces in betweEn in-line citation author-year
+    \renewcommand{\BBAA}{and} % And in between two authors instead of &
+    \renewcommand{\BOthers}[1]{\textit{et al.}\hbox{}} % et al.
+    \renewcommand{\BOthersPeriod}[1]{\textit{et al.}\hbox{}} % et al.
+    \renewcommand\refname{\textsc{Literature Cited}} % Change bib header
+    \renewcommand{\baselinestretch}{1.9}
+}
+
+\newtoggle{bibdoi}
+\newtoggle{biburl}
+\makeatletter
+\undef{\APACrefURL}
+\undef{\endAPACrefURL}
+\undef{\APACrefDOI}
+\undef{\endAPACrefDOI}
+\long\def\collect@url#1{\global\def\bib@url{#1}}
+\long\def\collect@doi#1{\global\def\bib@doi{#1}}
+\newenvironment{APACrefURL}{\global\toggletrue{biburl}
+\Collect@Body\collect@url}{\unskip\unskip}
+\newenvironment{APACrefDOI}{\global\toggletrue{bibdoi}
+\Collect@Body\collect@doi}{}
+
+\AtBeginEnvironment{thebibliography}{
+ \pretocmd{\PrintBackRefs}{
+  \iftoggle{bibdoi}
+    {\iftoggle{biburl}{}{}}
+    {\iftoggle{biburl}{}{}}
+  \togglefalse{bibdoi}\togglefalse{biburl}
+  }{}{}
+}
+
+\begin{document}
+
+%------------------------------------------------------------------------------
+% Cover Page
+%------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\begin{center}
+\includegraphics[scale=0.6]{northeastern_logo.jpg}
+
+\noindent
+\textsc{Capstone Proposal}
+
+\textsc{2015}
+\end{center}
+
+\vspace{2cm}
+
+\noindent
+Principal Investigator: \textsc{Charles Valentine}
+
+\vspace{1cm}
+
+\noindent
+Title:
+\textsc{Pre-natal Exposure to Aflatoxin B\textsubscript{1} and Chemopreventative Agents Sulphoraphane and Chlorophyllin}
+
+\vfill
+
+\noindent
+Institution: \textsc{Massachusetts Institute of Technology}
+
+\vspace{1cm}
+
+\noindent
+Date: \today
+
+\vspace{1cm}
+
+\noindent
+Amount Requested: \$1,201,019 for two operational years
+
+\vspace{5cm}
+
+\end{titlepage}
+
+
+%------------------------------------------------------------------------------
+% Background and Importance
+%------------------------------------------------------------------------------
+
+\newpage
+
+\section*{\upshape\textsc{Specific Aims and Objectives}}
+
+\noindent\textbf{\textsc{Background and Importance:}}
+Aflatoxin B\textsubscript{1} (AFB\textsubscript{1}) is the most toxic naturally occurring hepatocellular carcinogenic compound known.
+AFB\textsubscript{1} chronically affects 4.5 billion people in the developing world and is responsible for  25,200 to 155,000 cases of hepatocellular cancer yearly \cite{Liu2010}.
+A murine model for AFB\textsubscript{1} exposure has been historically used as the toxic compound is metabolized in the liver identically as in humans and causes the same mutagenic AFB\textsubscript{1}-DNA adduct formation in the genomes of hepatocytes \cite{Fiala2011}.
+
+Pre-natal mice are more prone to genetic disease from AFB\textsubscript{1} through maternal pathways even when the pregnant mouse shows a 20-fold reduction in genetic damage to an AFB\textsubscript{1} dosing regime \cite{Chawanthayatham2014a}. This warrants a further exploration into the rescuing effects chemopreventative compounds like sulphoraphane and chlorophyllin may have on the pre-natal mouse when administered through maternal pathways of metabolism and detoxification.
+
+%------------------------------------------------------------------------------
+% Specific Aims and Objectives
+%------------------------------------------------------------------------------
+
+\vspace{5mm}\noindent\textbf{\textsc{Specific Aim \#1:}}
+We expect a one order of magnitude decrease in DNA adduct load in exposed C57BL/6J \textit{gpt} delta transgenic mice during the pre-natal development stages when the pregnant mice are dosed with both AFB\textsubscript{1} and a chemopreventative agent (sulforaphane or chlorophyllin) \textit{via} intraperitoneal (\textit{i.p.}) injection or oral gavage on gestation day 14 (GD14).
+
+These experiments will be compared with a positive control of AFB\textsubscript{1} exposure and a negative control of dimethyl sulfoxide (DMSO) vehicle exposure dosed in the same regime.
+This DNA adduct analysis will quantify the mutagenic risk of AFB\textsubscript{1} and how the chosen chemopreventative agent can decrease the mutagenic risk in pre-natal mice.
+
+\vspace{5mm}\noindent\textbf{\textsc{Specific Aim \#2:}}
+Two types of genomic sequencing will be utilized in this assay to compare traditional MiSeq Illumina DNA library preparation with with the non-standard Duplex Consensus Sequencing (DCS) protocol on the HiSeq platform. We will use the traditional Illumina protocol to compare our data with historical data on AFB\textsubscript{1} exposure and use the non-biased DCS data for a modern characterization of the mutational spectra.
+
+The sequence of the rescued \textit{gpt} gene in the AFB\textsubscript{1} exposed pre-natal mice should show the indicative G:C to T:A tranversions as a majority of point mutations.
+Second to the characteristic AFB\textsubscript{1} mutation types, we expect to see G:C to A:T transitions which are indicative of inflammation due to reactive oxidation species in the liver.
+These mutant fractions, due to inflammation, should have elevated levels in the stressed AFB\textsubscript{1} dosed pre-natal mouse liver.
+
+We expect \emph{hotspot} point mutations at the 101, 108, 115, 140, 208, 244, and 320 nucleotide locations in the \textit{gpt} gene.
+These \emph{hotspots} are unstudied artifacts of the transcriptional assay and will confirm a reliability on the the assays results with historical data. The DCS data should remove this bias as explained in Specific Aim \#3.
+
+\vspace{5mm}\noindent\textbf{\textsc{Specific Aim \#3:}}
+To more accurately quantify the effects of AFB\textsubscript{1} and chemopreventative agents we will process a portion of the rescued DNA through the DCS sequencing protocol. We expect that the \textit{gpt} gene is an ideal target for implementing DCS due to the high copy number within the C57BL/6J mouse genome.
+
+We expect congruent results in the mutant fraction of genes sequenced with historical data.
+The mutant fraction of pre-natal mice exposed to AFB\textsubscript{1} should be near 10\textsuperscript{-6}.
+The mutant fraction of the pre-natal mice with AFB\textsubscript{1} and one of the proposed chemopreventative agents should be an order of magnitude less at 10\textsuperscript{-7} and the negative control samples should describe a basal mutant fraction of 10\textsuperscript{-8}-10\textsuperscript{-11} or less.
+
+DCS will, for the first time, quantitatively describe the mutagenic risk of the pre-natal mouse far below the error rate of traditional Illumina sequencing.
+We expect many of the transcriptional selection artifacts to disappear from the data.
+We also expect the mutational spectra to shift to a more accurate biological representation of the \textit{gpt} gene under AFB\textsubscript{1} exposure and under the cases with AFB\textsubscript{1} and the chosen chemopreventative agents.
+
+%------------------------------------------------------------------------------
+% Background and Significance
+%------------------------------------------------------------------------------
+
+\section*{\upshape\textsc{Background and Significance}}
+
+The human liver carcinogen aflatoxin B\textsubscript{1} (AFB\textsubscript{1}) is a prevalent toxin produced by the fungi \textit{Aspergillus flavus} and \textit{A. parasiticus} which infect corn (maize) and nuts in regions of the world that experience hot and humid conditions \cite{Groopman2014a}.
+AFB\textsubscript{1} is a DNA-binding toxin that contributes to genetic disease in the form of AFB\textsubscript{1}-DNA adducts \cite{Fiala2011}.
+The contamination and subsequent human exposure of AFB\textsubscript{1} is endemic in developing countries and is mainly due to grain storage practices which favor mold growth \cite{Schmidt2013}.
+
+There are an estimated 4.5 billion people in the developing world that are chronically affected by aflatoxins in their diet and these exposures may account for between 25,200 and 155,000 cases of hepatocellular cancer yearly \cite{Liu2010}.
+In 2013, a cross-sectional study published in \textit{Food Additives \& Contaminants} shows that approximately 78\% of 600 randomly selected serum samples in Kenya had detectable amounts of aflatoxins \cite{Yard2013}.
+Risk associated with AFB\textsubscript{1} exposure is well studied in both genders and in many age groups although it has only been recently shown that maternal exposure to AFB\textsubscript{1}, even at low amounts, causes amplified genetic damage to pre-natal mice \cite{Chawanthayatham2014a}.
+
+Aflatoxin exposure and risk is also purported to extend beyond hepatocellular carcinoma.
+The link between aflatoxin exposure and childhood stunting was borne from the research of Kitty Cardwell, a plant pathologist with the Department of Agriculture (USDA).
+Cardwell compared blood samples from 700 children with increased levels of impaired growth in her local area of study in Benin and Nigeria \cite{Gong2002}.
+These early correlative reports have spurred international attention with Knipstein and Groopman of Johns Hopkins Bloomberg School of Public Health pressing for further research in the mechanistic process for aflatoxins biochemical role in child development through the use of animal models \cite{Knipstein2015}.
+Childhood stunting is at 171 million worldwide and has attracted the targeted attention of many institutions and organizations \cite{DeOnis2012}.
+In one example, the Bill and Melinda Gates Foundation has chosen to focus on childhood stunting due to global incidence and the the affect on poorer nations \cite{Bill&MelindaGatesFoundation2011}.
+
+Research involving the pre-natal development stage is critical in understanding why liver cancer is the third highest incidence cancer globally \cite{Liu2010}.
+To examine why pre-natal animals are more prone to genetic disease from AFB\textsubscript{1} it is necessary to consider the physiology of the developing fetus.
+Chawanthayatham et al. (2014) have shown that an actively replicating and developing liver is twenty-fold more likely to develop mutations from an of AFB\textsubscript{1}-DNA adduct load when compared to a quiescent adult liver.
+The mutagenic potency of AFB\textsubscript{1} contributes to an increase in the mutant fraction of hepatic cells throughout the course of an animal's life even after an acute pre-natal exposure \cite{Woo2011a}.
+This hypothesis supports the notion that transplacental exposures of AFB\textsubscript{1} present a much greater risk than exposures of AFB\textsubscript{1} that take place later in life \cite{Groopman2014a}.
+
+AFB\textsubscript{1}-DNA adducts cause misreplication events that result in mutations \textit{via} base-rotation of the adducted base into a different conformation which eventually leads to a mispairing event during replication \cite{Loechler1989}.
+These mutations are thought to occur randomly throughout the accessible genome.
+Every AFB\textsubscript{1}-DNA adduct and subsequent mutation event increases the mutagenic risk of the cell and with a higher risk, carcinoma of the cell may result.
+
+In order to mitigate the unavoidable exposure and adverse effects of AFB\textsubscript{1} in developing countries it is necessary to seek preventative measures to protect maternal pathways through natural chemoprevention.
+Two compounds, cholorophyllin \cite{Egner2001} and sulforaphane \cite{Fiala2011}, have been shown to be safe and effective agents suitable for ingestion for those that have been exposed to aflatoxins.
+Both compounds reduce the AFB\textsubscript{1}-DNA adducts in livers of both sexes by inducing phase II enzymes which inactivate metabolized AFB\textsubscript{1} molecules \cite{Fiala2011}.
+
+Sulforaphane is shown to induce glutathione S-transferases (GSTs) which, in turn, sequester damaging AFB\textsubscript{1} metabolites \cite{Fiala2011}.
+The mechanistic properties for this inactivation are currently uncertain, however in 2011, Fiala et al. were able to show a reduction in AFB\textsubscript{1}-N\textsuperscript{7}-guanine adducts in a dose-dependent response to rats in laboratory trials when they consumed sulforaphane.
+Chlorophyllin is thought to act like a vitamin with nucleophilic tendencies and deactivate the AFB\textsubscript{1} metabolites just like an interceptor molecule \cite{Egner2001}.
+
+We propose an examination of sulforaphane and chlorophyllin on their ability to mediate pre-natal AFB\textsubscript{1} exposure in maternal mice to validate the ability of using chemopreventative agents as a protectant for newborns in developing countries.
+Through the assay as defined in Wattanawaraporn, et al. (2012) we will examine the mutational spectra in AFB\textsubscript{1} exposed pre-natal mice as compared with AFB\textsubscript{1} exposed pre-natal mice with a chemopreventative agent regiment.
+The mutational spectra will be compared with transcriptional assays and mutational spectrometry using the traditional and Duplex Consensus sequencing (DCS) protocols \cite{Schmitt2012}.
+
+Detection of ultra-rare mutations in any gene of the organism is essential in comparing dosed versus control cohorts as the mutant fraction is expected to be on an order of magnitude less than the accuracy of traditional Illumina sequencing \cite{Kennedy2013a}.
+To compare the mutational spectra of previous studies we plan to use the $\lambda$-EG10 DNA transgenic mouse which has become a standard for mutagenesis testing \cite{Nohmi1996}.
+The genome in this transgenic mouse hosts approximately 80 copies of the $\lambda$-EG10 plasmid with genes that can be successfully rescued using standard biochemistry techniques \cite{Nohmi1996}.
+
+The DCS procedure is an innovative and procedural method for increasing the accuracy of detecting a point mutation in magnitudes greater than 1 x 10\textsuperscript{7} wild-type nucleotides \cite{Kennedy2014}.
+The method relies on the double-stranded nature of DNA.
+Sequencing adapters and randomized barcodes are ligated onto the ends of the fragmented DNA of interest and then the individually labeled strands are melted and PCR-amplified.
+After sequencing the molecules, it is possible to group the families of molecules that share a common tag sequence using a digital bioinformatics pipeline.
+A mutation is scored as a true mutation if it is present in both of the original coding and non-coding strands of the DNA fragments.
+If a mutation is found in only some of the fragments then it can be attributed to sequencing or PCR bias.
+
+This research is critical in understanding effective, affordable, and available methods for preventing the population of developing countries from ingesting AFB\textsubscript{1} molecules.
+Many efforts have been made to reduce the aflatoxin concentration in developing nations including the construction of industrialized agriculture, \emph{Aspergillus}-resistant genetically modified crop seeds, and spraying agricultural land with \emph{Aspergillus} strains that are not capable in producing aflatoxin molecules in an effort to dilute the wild-type populations \cite{Schmidt2013}.
+These efforts have considerable cost and are difficult to implement in most of the countries that have the highest need for aflatoxin concentration reduction.
+Prophylactic ingestions of sulforaphane or chlorophyllin rich diets during pregnancy may help to substantially alleviate global scale health-care burdens ranging from hepatocellular carcinoma to stunting in children.
+Through this investigation we expect to show results that can better educate the diets of mothers during the terms of pregnancy that have the potential to drastically reduce aflatoxin effects on humans worldwide.
+
+%------------------------------------------------------------------------------
+% Research Design
+%------------------------------------------------------------------------------
+
+\newpage
+
+\section*{\upshape\textsc{Research Design}}
+
+\noindent\textbf{\textsc{The \emph{gpt}$\Delta$ C57BL/6 Mouse Model: }}
+This study will use the transgenic \emph{gpt}$\Delta$ B6C3F1 mouse developed with a high copy of the $\lambda$-EG10 \emph{gpt} gene \cite{Nohmi1996}.
+We will need to examine the mutations in genes whose expression is influenced by aflatoxin B\textsubscript{1} (AFB\textsubscript{1}) and, specifically, at a site in the mouse genome that is easy to recover.
+The lambda plasmid transgene is easily recovered using lambda phage packaging and the \emph{cre} gene (in the lambda plasmid transgene) can be used in transcriptional selection after translation into an \emph{Escherichia coli} strain \cite{Woo2011a}.
+
+C57BL/6 mice are estimated to have a total of 80 copies of the \emph{gpt} gene on the chromosome 17 of the mouse genome \cite{Chawanthayatham2014a}.
+The high-copy number of \emph{gpt}$\Delta$ mice provides a higher yield of rescued DNA from every genome.
+This is an experimental improvement that should increase the data output of the analysis and provide a more robust DNA sample that can then be ideally used by in sequencing.
+
+The target gene of this experimental protocol (\emph{gpt} gene of the $\lambda$-EG10 plasmid) is the choice of many toxicologists as a reference gene for examining mutational spectra.
+Nohmi \emph{et al.} (1996) suggests this model to be ideal for the efficient detection of point mutations and insertion or deletion events (indels).
+The DNA rescue from the mouse model liver tissue under the transcriptional assay will ultimately be sequenced using next-generation Illumina sequencing technologies in parallel with a duplex consensus sequencing technique as described below.
+
+To ensure an ideal murine colony we will require an F\textsubscript{1} generation of female C57BL/6 mice with C3H mice purchased from Jackson Laboratories (Bar Harbor, Maine).
+The pregnant females and pre-natal fetus of these pairings will be the subject of this proposal.
+
+\vspace{4mm}\noindent\textbf{\textsc{Dosing Regiment: }}
+The overall murine dosing regime will be split into cohorts of pregnant females.
+The cohorts will be dosed with a regime of the dimethyl sulfoxide (DMSO) vehicle, AFB\textsubscript{1} in varying concentrations with the DMSO vehicle or in varying concentrations of AFB\textsubscript{1} in DMSO vehicle \emph{via} oral gavage.
+The pregnant mice will be injected with AFB\textsubscript{1} in two concentrations.
+The mice for mutational analysis will be dosed with 6 mg $\cdot$ kg\textsuperscript{-1} dissolved in 100 $\mu$L of DMSO.
+The mice for adduct analysis will be dosed with 5 mg $\cdot$ kg\textsuperscript{-1} in 100 $\mu$L of DMSO.
+
+All dosing will be carried out in the Massachusetts Institute of Technology (MIT) Building 68S Division of Comparative Medicine (DCM) \emph{per} the approval and murine model restrictions of the Committee on Animal Care (CAC).
+Invasive dosing in the mice will be accomplished \emph{via} intraperitoneal (\emph{i.p.}) injection which is widely used to introduce a chemical agent into the blood, tissue, and ultimately liver metabolism of the animal.
+
+To test our chemopreventative hypothesis we will duplicate the above dosing cohorts into three groups. The first control group will consume a standard diet.
+The second group will consume a normal diet of solid food but will be given water with 1.4 nmol $\cdot$ kg\textsuperscript{-1} of sulforaphane.
+The third group will consume a normal diet of solid food but will be given water with 1.4 nmol $\cdot$ kg\textsuperscript{-1} of chlorophyllin.
+
+\vspace{4mm}\noindent\textbf{\textsc{Experimental Scheme: }}
+Only pregnant mice that have given birth once before will be included in this study to prevent na{\"i}ve mothers from miscarriage and skewing the data.
+Pregnant mice will receive injections at gestational day (GD) 14. Mice that are selected for adduct analysis will then be sacrificed 6 hours later and subjected to an adduct analysis.
+
+At approximately GD 21 most pregnant females will give birth the their litters.
+Two sacrificial time points at post natal day (PND) 21 (3 weeks of age) and PND 70 (10 weeks of age) have been chosen to examine the mutational frequency and mutational spectra of liver cells.
+Any tumors that have developed at this point in the mother or offspring will be be sampled separately.
+Hepatocyte and non-hepatocyte cells will also be separated for further categorical analysis.
+
+The DNA adduct analysis will help to distinguish the effect of AFB\textsubscript{1} on the mother and the dosed pre-natal offspring.
+The statistical accuracy of this data will best be represented using a hypergeometric probability distribution as defined by Adams and Skopek \cite{Adams1987}.
+A program has been developed by Cariello \emph{et al.} (1994) that has since been ported in the Python language for modern use in a bioinformatics pipeline on a dedicated computation cluster.
+
+\vspace{4mm}\noindent{\textbf{\textsc{DNA Isolation and \emph{in vitro} Packaging: }}}
+We shall first use a capture set covering ~5 Kb of sequences within several exons of the target genes.
+As we have learned from our preliminary experiments, breadth of coverage is limited by number of independent copies of each target required for identification of mutations by DCS analysis.
+Since protein-coding exons in the human genome have a median size of 120 bp, 5 Kb of capture sequence will be sufficient to target exons and surrounding regions in our gene list.
+The mutational analyses will interrogate copies of each target sequence from ~10\textsuperscript{6} liver cells \cite{Chawanthayatham2014a}.
+The capture set will be optimized for solution hybridization using 10 $\mu$g of genomic DNA containing 1.5 x 10\textsuperscript{6} copies of the target sequences; ~7 pg of DNA per liver cell.
+Assuming solution hybrid capture is 70-80\% efficient as reported, 1-1.2 x 10\textsuperscript{6} copies of each target sequence will be in the selected pool for DCS analyses \cite{Parla2011}.
+Based on our published experience with the transgenic reporter system, this number of independent sequence copies will be adequate for detection and statistical evaluation of changes in mutant fraction within target sequences.
+
+The liver tissue collected from the mice in the environmental scheme will be pulverized and stored at --80\degree{}C.
+Genomic DNA will be recovered using the RecoverEase DNA Isolation Kit from Agilent Technologies, Santa Clara, CA.
+The \emph{gpt} genes will be rescued using $\lambda$-EG10 \emph{in vitro} packaging and infection to \emph{Escherichia coli} for amplification and size selective purification.
+The rescued linear $\lambda$-EG10 plasmid codes for many genes including the \emph{gpt} gene of interest.
+
+\vspace{4mm}\noindent{\textbf{\textsc{Duplex Conscensus Sequencing: }}}
+DNA samples will be prepared using the BioMicro Center core at MIT.
+The library preparation is essential in building a reference of DNA with enough depth of sequencing to statistically measure ultra-rare point mutations caused by the week long exposure of AFB\textsubscript{1} \cite{Schmitt2012}.
+Duplex Conscensus Sequencing (DCS) and library preparation on a Hi-Seq Illumina platform will allow us to see the AFB\textsubscript{1} mutator genotype at any stage in our experimental protocol without the bias of traditional transcriptional assays used to isolate mutational phenotypes.
+
+DCS involves barcoding all double stranded fragments with unique k-\emph{mer} identifiers by randomly annealing deoxynucleotides (dNTPs) to either side of the sample molecules.
+This step is essential in preserving the biologic molecule to data conversion. Polymerase chain reaction (PCR) will then amplify and, as a side effect, incorporate error into the sample molecules.
+This error can be filtered out digitally by comparing isolated single strand molecules with their bar coded pair found in solution.
+This step is done through the use of a bioinformatics pipeline as described below.
+True sample point mutations will appear consistent in both single strand molecules whereas library preparation and PCR error will likely appear in only a single strand.
+This technology allows us to examine mutation frequencies below the limit of detection (LOD) of traditional sequencing techniques \cite{Kennedy2013a}.
+
+For a comparison into historical data we will be sequencing using a more traditional transcriptional assay into Mi-Seq sequencing and the next-generation DCS Hi-Seq sequencing.
+This directly supports Specific Aim \#2 into comparing historical data to a \emph{de novo} sequencing technology coupled with high-throughput bioinformatics processing.
+
+\vspace{4mm}\noindent{\textbf{\textsc{Computation Cluster and Data Analysis: }}}
+The MIT computation cluster will be used to run the DCS bioinformatics pipeline to process the terabytes of sequencing data.
+The Loeb Lab of the University of Washington has provided a template bioinformatics pipeline available at their online \href{https://github.com/loeblab}{repository}.
+We have already run preliminary sequencing test on sample data to refine the technology as proposed by Kennedy \emph{et al.} which show a mutational spectra dominated by G:C to T:A transversion mutations in the dosed mother and offspring characteristic of AFB\textsubscript{1} exposure \cite{Kennedy2014} which is in line with our hypothesis.
+These results should confirm a statistically relevant difference between pre-natal exposures with a AFB\textsubscript{1} mother that is consuming a high concentration of chemopreventative sulforaphane and chlorophyllin \emph{versus} an AFB\textsubscript{1} dosed mother on a standard diet.
+
+%------------------------------------------------------------------------------
+% Budget
+%------------------------------------------------------------------------------
+
+\newpage
+
+\section*{\upshape\textsc{Budget and Justification}}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Budget Item}          & \textbf{Year 1}    & \textbf{Year 2}    & \textbf{Total}     \\ \hline
+Principal Investigator Salary & \$9,000            & \$9,000            & \$18,000           \\ \hline
+Senior Research Salary        & \$42,000           & \$42,000           & \$84,000           \\ \hline
+Post-Doctoral Salary          & \$42,000           & \$42,000           & \$84,000           \\ \hline
+Graduate Research Assistant   & \$44,952           & \$44,952           & \$89,904           \\ \hline
+Northeastern Univ. Co-op      & \$35,000           & \$35,000           & \$70,000           \\ \hline
+\textbf{Total Salary}         & \textbf{\$130,952} & \textbf{\$130,952} & \textbf{\$234,000} \\ \hline
+\textbf{Fringe Benefits}      & \textbf{\$62,641}  & \textbf{\$62,641}  & \textbf{\$88,216}  \\ \hline
+Travel                        & \$1,200            & \$1,200            & \$2,400            \\ \hline
+Supplies \& Equipment         & \$40,000           & \$40,000           & \$80,000           \\ \hline
+Animal Care                   & \$124,000          & \$124,000          & \$248,000          \\ \hline
+Lambda Packaging Kits         & \$23,000           & \$23,000           & \$46,000           \\ \hline
+Computation Cluster Space     & \$698              & \$698              & \$1,396            \\ \hline
+\textbf{Direct Cost Total}    & \textbf{\$382,490} & \textbf{\$382,490} & \textbf{\$764,980} \\ \hline
+\textbf{Indirect Cost (57\%)} & \textbf{\$218,019}  & \textbf{\$218,019.3}  & \textbf{\$436,039} \\ \hline \hline
+\textbf{Grand Total}          & \textbf{\$600,509} & \textbf{\$600,509} & \textbf{\$1,201,019}          \\ \hline
+\end{tabular}
+\end{table}
+
+\vspace{5mm}\noindent{\textbf{\textsc{Budget Justification: }}}
+We have estimated a budget based on our previous expenses in trial experiments to learn the techniques of this experimental protocol.
+The Principal Investigator (P.I.) is requesting a salary compensation of \$9,000 \emph{per} year for project management and acts to ensure scientific integrity.
+The senior researcher, Robert Croy, will be paid full-time salary of \$42,000 \emph{per} year for managing the CAC and animal care paperwork and experimental oversight.
+We are requesting a total sum of \$121,952 for two years for one graduate, one post-doctoral employee and on Northeastern University Co-op student to carry out the protocol as set forth in this proposal.
+The Northeastern University Co-op student will be employed to help the graduate students and oversee the data analysis and bioinformatics pipeline.
+The post-doctoral employee and graduate student will work side by side in carrying through the experimental protocol.
+
+Fringe benefits were calculated as 27.5\% of the salary of the principal investigator, senior research assistant, and post-doc employees.
+The fringe for undergraduates and graduate students was calculated to be 7.65\% of their respective salaries.
+
+The principal investigator requests \$1,200 \emph{per} year for traveling to Seattle for DCS assistance at the Loeb Laboratory in Washington, U.S.
+These meetings will help our understanding of the DCS procedure and help to expedite our experimental troubleshooting.
+
+The equipment and animal care is a variable cost which accounts for a bulk of our Indirect Cost assumption.
+We expect to use \$187,000 in supplies, equipment, organic compounds, specific lambda phage kits, and animal care through MIT's Building 68S.
+The computation cluster at MIT charges \$698 \emph{per} year for digital space on the \emph{rous} supercomputer.
+The indirect costs assigned to this project run at MIT's rate of 57\%.
+This factor includes rent, utilities, and administration at the institute.
+
+%------------------------------------------------------------------------------
+% Literature Cited
+%------------------------------------------------------------------------------
+
+\newpage
+
+\let\itshape\upshape     % Remove italics from Bibliography
+\singlespacing\centering % Center Literature Cited and Single Space page
+\bibliographystyle{apacite}
+\bibliography{C:/dev/latexlocal/Bibliographies/aflatoxin}
+
+\end{document}

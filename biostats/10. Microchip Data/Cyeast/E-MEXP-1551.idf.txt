@@ -1,0 +1,50 @@
+Investigation Title	Transcription profiling of yeast strains harbouring a temperature sensitive allele of the essential telomere capping gene cdc13-1 to investigate the genome-wide response to uncapped telomeres						
+Comment[Submitted Name]	A genome wide analysis of the response to uncapped telomeres in budding yeast reveals a novel role for NAD biosynthetic genes in telomere end protection.						
+Experimental Design	time_series_design	genetic_modification_design	stimulus_or_stress_design	in_vitro_design	co-expression_design	transcription profiling by array	
+Experimental Design Term Source REF	The MGED Ontology	The MGED Ontology	The MGED Ontology		The MGED Ontology	EFO	
+Comment[SecondaryAccession]							
+Comment[ArrayExpressReleaseDate]	2010-02-24						
+Comment[AEMIAMESCORE]	5						
+Comment[ArrayExpressAccession]	E-MEXP-1551						
+Comment[MAGETAB TimeStamp_Version]	2010-08-09 23:07:50 Last Changed Rev: 13058						
+Experimental Factor Name	temperature	phenotype	time				
+Experimental Factor Type	temperature	phenotype	time				
+Experimental Factor Term Source REF							
+Person Last Name	Swan						
+Person First Name	Dan						
+Person Mid Initials							
+Person Email	d.c.swan@ncl.ac.uk						
+Person Phone	0191 222 7856						
+Person Fax							
+Person Address	ICamB, Newcastle, Tyne and Wear, NE1 7RU, United Kingdom						
+Person Affiliation	Newcastle University						
+Person Roles	submitter						
+Person Roles Term Source REF	The MGED Ontology						
+Quality Control Type							
+Quality Control Term Source REF							
+Replicate Type							
+Replicate Term Source REF							
+Normalization Type							
+Normalization Term Source REF							
+Date of Experiment							
+Public Release Date	2010-02-24						
+PubMed ID	18828915						
+Publication DOI	10.1186/gb-2008-9-10-r146						
+Publication Author List	Greenall A, Lei G, Swan DC, James K, Wang L, Peters H, Wipat A, Wilkinson DJ, Lydall D.						
+Publication Title	A genome wide analysis of the response to uncapped telomeres in budding yeast reveals a novel role for the NAD+ biosynthetic gene BNA2 in chromosome end protection.						
+Publication Status	journal_article						
+Publication Status Term Source REF	The MGED Ontology						
+Experiment Description	Telomeres are nucleoprotein complexes that protect the ends of eukaryotic chromosomes from being recognised as double strand breaks. When telomere structure is perturbed, a co-ordinated series of events to promote arrest of the cell cycle is rapidly initiated so that cells carrying damaged telomeres do not continue to divide.  In order to better understand the eukaryotic response to telomere damage, we employed budding yeast strains harbouring a temperature sensitive allele of an essential telomere capping gene (cdc13-1) and conducted a transcriptomic study of the genome-wide response to uncapped telomeres. We show that telomere uncapping in cdc13-1 strains is associated with the differential expression of over 1100 genes and has features in common with the responses to DNA damage, diverse environmental stresses and, as expected, the absence of telomerase. The transcriptomic response to telomere uncapping includes many genes with known roles in telomere function and some features that appear to be unique. BNA2 is the second most highly up-regulated gene upon telomere uncapping in cdc13-1 strains and is required for the biosynthesis of NAD+.  We have shown that deletion of BNA2 and other genes involved in NAD+ synthesis, suppresses the temperature sensitivity of cdc13-1 strains. NAD+ synthetic genes may therefore play previously unknown roles in the cellular response to telomere uncapping.						
+Protocol Name	P-MTAB-172	P-MTAB-173	P-MTAB-174	P-AFFY-2	Affymetrix:Protocol:Hybridization-Unknown	P-AFFY-6	Affymetrix:Protocol:ExpressionStat
+Protocol Type	nucleic_acid_extraction	specified_biomaterial_action	grow	labeling	hybridization	feature_extraction	bioassay_data_transformation
+Protocol Description	Samples were harvested by spinning at 3000rpm for 2 minutes before being snap frozen. RNA was isolated using a hot phenol method followed by purification using Qiagen RNeasy columns (R. Lyne, G. Burns, J. Mata et al., BMC genomics 4 (1), 27 (2003).)<br>(Parameters: Extracted product = total_RNA, Amplification = none)	Cultures were transferred to restrictive temperatures (30 degrees Celsius) and no further dilutions were made thereafter. Aliquots were taken at each time point (0 to 240 minutes in 60 minute intervals) to assess cell cycle arrest, viability and cell numbers as described in M. K. Zubko, L. Maringele, S. S. Foster et al., Methods in enzymology 409, 285 (2006).	Cultures were grown overnight at 23ºC to a density of 3-4 x 106 cells/ml  and diluted as described in M. K. Zubko, L. Maringele, S. S. Foster et al., Methods in enzymology 409, 285 (2006).<br>(Parameters: start time = 16, time unit = hours, min temperature = 23, temperature unit = C, media = YEPD supplemented with 50mg/L adenine)	Title: Affymetrix in vitro transcription. Description: 	Title: Affymetrix Generic Hybridization. Description: 	Title: Affymetrix CEL analysis. Description: 	Title: Affymetrix CHP Analysis (ExpressionStat). Description: 
+Protocol Parameters							
+Protocol Hardware							
+Protocol Software					MicroArraySuite 5.0	MicroArraySuite 5.0	MicroArraySuite 5.0
+Protocol Contact							
+Protocol Term Source REF					mo		The MGED Ontology
+SDRF File	E-MEXP-1551.sdrf.txt						
+Term Source Name	mo		The MGED Ontology	ArrayExpress	The MGED Ontology	EFO	mo
+Term Source File	http://mged.sourceforge.net/ontologies/MGEDontology.php		http://mged.sourceforge.net/ontologies/MGEDontology.php	http://www.ebi.ac.uk/arrayexpress	http://mged.sourceforge.net/ontologies/MGEDontology.php	http://www.ebi.ac.uk/efo/	http://mged.sourceforge.net/ontologies/MGEDontology.php
+Term Source Version							
+Comment[AEExperimentType]	transcription profiling by array						
