@@ -1,0 +1,993 @@
+
+1. Biomed Res Int. 2013;2013:601368. doi: 10.1155/2013/601368. Epub 2013 Dec 24.
+
+Do telomeres adapt to physiological stress? Exploring the effect of exercise on
+telomere length and telomere-related proteins.
+
+Ludlow AT(1), Ludlow LW(2), Roth SM(3).
+
+Author information: 
+(1)Department of Cell Biology, UT Southwestern Medical Center, Dallas, TX 75309,
+USA.
+(2)Department of Applied Physiology and Wellness, Southern Methodist University,
+Dallas, TX 75206, USA.
+(3)Department of Kinesiology, School of Public Health, University of Maryland,
+College Park, MD 20742-2611, USA.
+
+Aging is associated with a tissue degeneration phenotype marked by a loss of
+tissue regenerative capacity. Regenerative capacity is dictated by environmental 
+and genetic factors that govern the balance between damage and repair. The
+age-associated changes in the ability of tissues to replace lost or damaged cells
+is partly the cause of many age-related diseases such as Alzheimer's disease,
+cardiovascular disease, type II diabetes, and sarcopenia. A well-established
+marker of the aging process is the length of the protective cap at the ends of
+chromosomes, called telomeres. Telomeres shorten with each cell division and with
+increasing chronological age and short telomeres have been associated with a
+range of age-related diseases. Several studies have shown that chronic exposure
+to exercise (i.e., exercise training) is associated with telomere length
+maintenance; however, recent evidence points out several controversial issues
+concerning tissue-specific telomere length responses. The goals of the review are
+to familiarize the reader with the current telomere dogma, review the literature 
+exploring the interactions of exercise with telomere phenotypes, discuss the
+mechanistic research relating telomere dynamics to exercise stimuli, and finally 
+propose future directions for work related to telomeres and physiological stress.
+
+PMCID: PMC3884693
+PMID: 24455708  [PubMed - indexed for MEDLINE]
+
+
+2. PLoS One. 2013 Dec 9;8(12):e81877. doi: 10.1371/journal.pone.0081877. eCollection
+2013.
+
+Healthy lifestyles reduce the incidence of chronic diseases and dementia:
+evidence from the Caerphilly cohort study.
+
+Elwood P(1), Galante J(1), Pickering J(1), Palmer S(1), Bayer A(1), Ben-Shlomo
+Y(2), Longley M(3), Gallacher J(1).
+
+Author information: 
+(1)Cochrane Institute of Primary Care and Public Health, Cardiff University,
+Cardiff, United Kingdom.
+(2)School of Social and Community Medicine, University of Bristol, Bristol, United
+Kingdom.
+(3)Welsh Institute for Health and Social Care, University of South Wales,
+Pontypridd, United Kingdom.
+
+BACKGROUND: Healthy lifestyles based on non-smoking, an acceptable BMI, a high
+fruit and vegetable intake, regular physical activity, and low/moderate alcohol
+intake, are associated with reductions in the incidence of certain chronic
+diseases, but to date there is limited evidence on cognitive function and
+dementia.
+METHODS: In 1979 healthy behaviours were recorded on 2,235 men aged 45-59 years
+in Caerphilly, UK. During the following 30 years incident diabetes, vascular
+disease, cancer and death were recorded, and in 2004 cognitive state was
+determined.
+FINDINGS: Men who followed four or five of the behaviours had an odds ratio (OR) 
+and confidence intervals (CI) for diabetes, corrected for age and social class,
+of 0.50 (95% CI: 0.19, 1.31; P for trend with increasing numbers of healthy
+behaviours <0.0005). For vascular disease the OR was 0.50 (95% CI: 0.30, 0.84; P 
+for trend <0.0005), and there was a delay in vascular disease events of up to 12 
+years. Cancer incidence was not significantly related to lifestyle although there
+was a reduction associated with non-smoking (OR: 0.65; 95% CI: 0.54, 0.79).
+All-cause mortality was reduced in men following four or five behaviours (OR
+0.40; 95% CI: 0.24, 0.67; P for trend <0.005). After further adjustment for NART,
+the OR for men following four or five healthy behaviours was 0.36 (95% CI: 0.12, 
+1.09; P for trend <0.001) for cognitive impairment, and 0.36 (95% CI: 0.07, 1.99;
+P for trend <0.02) for dementia. The adoption of a healthy lifestyle by men was
+low and appears not to have changed during the subsequent 30 years, with under 1%
+of men following all five of the behaviours and 5% reporting four or more in 1979
+and in 2009.
+INTERPRETATION: A healthy lifestyle is associated with increased disease-free
+survival and reduced cognitive impairment but the uptake remains low.
+
+PMCID: PMC3857242
+PMID: 24349147  [PubMed - indexed for MEDLINE]
+
+
+3. Duke Med Health News. 2013 Oct;19(10):5-6.
+
+Control blood sugar levels to reduce risk of Alzheimer's. Lifestyle
+modifications--diet and exercise--can help manage blood glucose.
+
+[No authors listed]
+
+PMID: 24288814  [PubMed - indexed for MEDLINE]
+
+
+4. Semin Speech Lang. 2013 Aug;34(3):170-84. doi: 10.1055/s-0033-1358370. Epub 2013 
+Oct 28.
+
+Language-enriched exercise plus socialization for older adults with dementia:
+translation to rural communities.
+
+La Rue A(1), Felten K, Duschene K, MacFarlane D, Price S, Zimmerman S, Hafez S.
+
+Author information: 
+(1)Wisconsin Alzheimer's Institute, School of Medicine and Public Health, University
+of Wisconsin-Madison, Madison, Wisconsin.
+
+Interventions that stimulate and engage individuals with dementia physically,
+cognitively, and socially offer promise for improving health and well-being and
+for potentially slowing functional losses with disease progression. We describe a
+volunteer-based intervention that combines physical exercise,
+cognitive-linguistic stimulation, and social outings for older persons living
+with dementia in rural communities. One-year follow-up data, although clearly
+preliminary (n = 8), suggest stability in global cognition, mood, and aspects of 
+physical fitness. Challenges to implementing dementia interventions in rural
+areas are discussed.
+
+Thieme Medical Publishers 333 Seventh Avenue, New York, NY 10001, USA.
+
+PMID: 24166191  [PubMed - indexed for MEDLINE]
+
+
+5. Int J Nurs Pract. 2013 Sep;19 Suppl 3:56-63. doi: 10.1111/ijn.12174.
+
+Degree of ambulation and factors associated with the median distance moved per
+day in Alzheimer's disease patients.
+
+Nishikata S(1), Yamakawa M, Shigenobu K, Suto S, Makimoto K.
+
+Author information: 
+(1)Department of Clinical Nursing, Division of Health Sciences, Graduate School of
+Medicine, Osaka University, Osaka, Japan.
+
+The Integrated Circuit tag monitoring system became available to measure
+wandering in terms of the distance moved by dementia patients. The purposes of
+the study were to describe degree of ambulation in patients with Alzheimer's
+disease (AD) and to examine factors associated with the distance moved. AD
+patients were recruited at a dementia care unit in Asakayama Hospital, Osaka,
+Japan. The monitoring system generated the distance moved per day. Demographic
+and clinical data were abstracted from medical records. Mini-Mental State
+Examination was used to measure cognitive function. A multiple linear regression 
+was used to predict the distance moved per day. The research was approved by the 
+ethics committee of the university and the hospital, and written informed consent
+was obtained from the patients' proxies. Majority of the AD subjects monitored
+had moderate to advance stage of dementia. Patients' age and cognitive function
+were predictors of the median distance moved/day, and these two variables
+explained almost half of the variance. Older age and lower cognitive function
+were associated with reduced median distance moved per day in AD patients.
+
+© 2013 Wiley Publishing Asia Pty Ltd.
+
+PMID: 24090298  [PubMed - indexed for MEDLINE]
+
+
+6. Brain Res. 2013 Nov 20;1539:95-104. doi: 10.1016/j.brainres.2013.10.004. Epub
+2013 Oct 9.
+
+Physical activity and the brain: a review of this dynamic, bi-directional
+relationship.
+
+Loprinzi PD(1), Herod SM, Cardinal BJ, Noakes TD.
+
+Author information: 
+(1)Department of Exercise Science, Lansing School of Nursing and Health Sciences,
+Bellarmine University, 2001 Newburg Road, Louisville, KY 40205, USA. Electronic
+address: ploprinzi@bellarmine.edu.
+
+The brain plays a major role in regulating physical activity behavior and
+exercise performance. Regular physical activity may also play a key role in the
+prevention and treatment of various neurological conditions, such as Parkinson's 
+disease, Alzheimer's disease, depression, and cognitive function. This implies
+that not only does the brain (or the nervous system) regulate aspects of physical
+activity, but also that physical activity may potentially influence brain-related
+function and outcomes. This review details this bi-directional relationship and
+addresses its implications for improving physical activity, exercise performance,
+and brain-related function and outcomes.
+
+© 2013 Elsevier B.V. All rights reserved.
+
+PMID: 24120986  [PubMed - indexed for MEDLINE]
+
+
+7. J Neurochem. 2013 Oct;127(1):4-6. doi: 10.1111/jnc.12406.
+
+Is exercise-in-a-bottle likely to proffer new insights into Alzheimer's disease?
+
+Correia SC(1), Perry G, Castellani R, Moreira PI.
+
+Author information: 
+(1)Center for Neuroscience and Cell Biology, University of Coimbra, Coimbra,
+Portugal; Institute for Interdisciplinary Research, University of Coimbra,
+Coimbra, Portugal.
+
+PMCID: PMC3831604
+PMID: 24074055  [PubMed - indexed for MEDLINE]
+
+
+8. Curr Opin Clin Nutr Metab Care. 2013 Jul;16(4):492-8.
+
+Current world literature. Carbohydrates.
+
+[No authors listed]
+
+PMID: 23885358  [PubMed - indexed for MEDLINE]
+
+
+9. MAbs. 2013 Sep-Oct;5(5):665-77. doi: 10.4161/mabs.25424. Epub 2013 Jun 20.
+
+Early intervention in the 3xTg-AD mice with an amyloid β-antibody fragment
+ameliorates first hallmarks of Alzheimer disease.
+
+Giménez-Llort L(1), Rivera-Hernández G, Marin-Argany M, Sánchez-Quesada JL,
+Villegas S.
+
+Author information: 
+(1)Institut de Neurociències; Unitat de Biociències; Universitat Autònoma de
+Barcelona; Barcelona, Spain; Departament de Psiquiatria i Medicina Legal; Unitat 
+de Biociències; Universitat Autònoma de Barcelona; Barcelona, Spain.
+
+The single-chain variable fragment, scFv-h3D6, has been shown to prevent in vitro
+toxicity induced by the amyloid β (Aβ) peptide in neuroblastoma cell cultures by 
+withdrawing Aβ oligomers from the amyloid pathway. Present study examined the in 
+vivo effects of scFv-h3D6 in the triple-transgenic 3xTg-AD mouse model of
+Alzheimer disease. Prior to the treatment, five-month-old female animals,
+corresponding to early stages of the disease, showed the first behavioral and
+psychological symptoms of dementia -like behaviors. Cognitive deficits included
+long- and short-term learning and memory deficits and high swimming navigation
+speed. After a single intraperitoneal dose of scFv-h3D6, the swimming speed was
+reversed to normal levels and the learning and memory deficits were ameliorated. 
+Brain tissues of these animals revealed a global decrease of Aβ oligomers in the 
+cortex and olfactory bulb after treatment, but this was not seen in the
+hippocampus and cerebellum. In the untreated 3xTg-AD animals, we observed an
+increase of both apoJ and apoE concentrations in the cortex, as well as an
+increase of apoE in the hippocampus. Treatment significantly recovered the
+non-pathological levels of these apolipoproteins. Our results suggest that the
+benefit of scFv-h3D6 occurs at both behavioral and molecular levels.
+
+PMCID: PMC3851220
+PMID: 23884018  [PubMed - indexed for MEDLINE]
+
+
+10. J Aging Health. 2013 Oct;25(7):1143-58. doi: 10.1177/0898264313494803. Epub 2013 
+Jul 5.
+
+What are older Latinos told about physical activity and cognition? A content
+analysis of a top-circulating magazine.
+
+Rose ID(1), Friedman DB, Marquez DX, Fernandez K.
+
+Author information: 
+(1)Department of Health Promotion, Education, and Behavior, University of South
+Carolina, Columbia, SC, USA.
+
+OBJECTIVES: Physical activity (PA) may reduce risk of developing Alzheimer's
+disease (AD). The objectives of this study were to: (a) Compare the content of
+English and Spanish PA-focused articles in American Association of Retired
+Persons (AARP) magazines; and (b) Determine whether these articles discuss PA as 
+a potential correlate of AD.
+METHOD: AARP (English) and AARP Segunda Juventud (Spanish) magazines were
+assessed for PA coverage from 2009 to 2010. Articles were analyzed using
+nonparametric tests.
+RESULTS: A total of 63 articles discussed PA (48 English; 15 Spanish). In AARP
+English, 70.8% of articles discussed formal exercise, while 53.3% of Spanish
+articles discussed formal exercise. Only three English articles mentioned that PA
+has the potential to reduce risk of AD. No Spanish articles mentioned this
+association.
+DISCUSSION: Spanish content did not adequately present cognitive health
+information. Culturally appropriate media coverage is needed to inform diverse
+populations about cognitive health and risks of AD.
+
+PMID: 23832842  [PubMed - indexed for MEDLINE]
+
+
+11. CNS Neurosci Ther. 2013 Oct;19(10):795-803. doi: 10.1111/cns.12139. Epub 2013 Jul
+4.
+
+Aerobic exercise combined with antioxidative treatment does not counteract
+moderate- or mid-stage Alzheimer-like pathophysiology of APP/PS1 mice.
+
+Xu ZQ(1), Zhang LQ, Wang Q, Marshall C, Xiao N, Gao JY, Wu T, Ding J, Hu G, Xiao 
+M.
+
+Author information: 
+(1)Jiangsu Key Laboratory of Neurodegeneration, Nanjing Medical University, Nanjing,
+Jiangsu, China.
+
+AIMS: The present study evaluated the combined treatment effects of aerobic
+exercise and antioxidative stress on moderate-stage Alzheimer's disease (AD).
+METHODS: Ten-month-old APP/PS1 mice were given antioxidative treatment with
+acetylcysteine, along with aerobic exercise for 6 weeks. Spatial learning and
+memory were tested using the Morris water maze, and β-amyloid (Aβ) plaque
+deposits in the forebrain were quantified by Thioflavin-S staining. Levels of
+soluble Aβ1-42, β-secretase enzyme, ү-secretase enzyme, oxidative and antioxidant
+stress markers nitrotyrosine and peroxiredoxin-1, glial markers glial fibrillary 
+acidic protein and ionized calcium-binding adaptor molecule 1, and synaptic
+protein synaptophysin in the hippocampus were all measured by western blotting
+and/or immunohistochemistry.
+RESULTS: APP/PS1 mice showed severe declines in spatial learning and memory
+compared with their wild-type littermates, which were not attenuated by aerobic
+exercise combined with antioxidative treatment. The pathologic analysis revealed 
+that Aβ deposition and production, oxidative stress, glial inflammation, and
+synaptic loss were not mitigated in the brain of exercised APP/PS1 mice, compared
+with the sedentary APP/PS1 animals.
+CONCLUSION: This study reveals that a combined treatment of aerobic exercise plus
+antioxidative stress does not counteract pathophysiology in the moderate- or
+mid-stages of AD.
+
+© 2013 John Wiley & Sons Ltd.
+
+PMID: 23827013  [PubMed - indexed for MEDLINE]
+
+
+12. Duke Med Health News. 2013 May;19(5):8.
+
+Is there any way I can prevent, or at least reduce my risk of developing
+Alzheimer's disease or other dementias?
+
+[No authors listed]
+
+PMID: 23802333  [PubMed - indexed for MEDLINE]
+
+
+13. Cell Death Dis. 2013 Jun 20;4:e678. doi: 10.1038/cddis.2013.194.
+
+Enriched environment and physical activity reverse astrogliodegeneration in the
+hippocampus of AD transgenic mice.
+
+Rodríguez JJ, Terzieva S, Olabarria M, Lanza RG, Verkhratsky A.
+
+PMCID: PMC3702309
+PMID: 23788035  [PubMed - indexed for MEDLINE]
+
+
+14. Curr Top Behav Neurosci. 2013;15:313-40. doi: 10.1007/7854_2012_237.
+
+Prolonged running, not fluoxetine treatment, increases neurogenesis, but does not
+alter neuropathology, in the 3xTg mouse model of Alzheimer's disease.
+
+Marlatt MW(1), Potter MC, Bayer TA, van Praag H, Lucassen PJ.
+
+Author information: 
+(1)Swammerdam Institute for Life Science-Center for Neuroscience, University of
+Amsterdam, Science Park 904, 1098 XH, Amsterdam, The Netherlands.
+
+Reductions in adult neurogenesis have been documented in the original 3xTg mouse 
+model of Alzheimer's disease (AD), notably occurring at the same age when spatial
+memory deficits and amyloid plaque pathology appeared. As this suggested reduced 
+neurogenesis was associated with behavioral deficits, we tested whether activity 
+and pharmacological stimulation could prevent memory deficits and modify
+neurogenesis and/or neuropathology in the 3xTg model backcrossed to the C57Bl/6
+strain. We chronically administered the antidepressant fluoxetine to one group of
+mice, allowed access to a running wheel in another, and combined both treatments 
+in a third cohort. All treatments lasted for 11 months. The female 3xTg mice
+failed to exhibit any deficits in spatial learning and memory as measured in the 
+Morris water maze, indicating that when backcrossed to the C57Bl/6 strain, the
+3xTg mice lost the behavioral phenotype that was present in the original 3xTg
+mouse maintained on a hybrid background. Despite this, the backcrossed 3xTg mice 
+expressed prominent intraneuronal amyloid beta (Aβ) levels in the cortex and
+amygdala, with lower levels in the CA1 area of the hippocampus. In the combined
+cohort, fluoxetine treatment interfered with exercise and reduced the total
+distance run. The extent of Aβ neuropathology, the tau accumulations, or BDNF
+levels, were not altered by prolonged exercise. Thus, neuropathology was present 
+but not paralleled by spatial memory deficits in the backcrossed 3xTg mouse model
+of AD. Prolonged exercise for 11 months did improve the long-term survival of
+newborn neurons generated during middle-age, whereas fluoxetine had no effect. We
+further review and discuss the relevant literature in this respect.
+
+PMID: 23670818  [PubMed - indexed for MEDLINE]
+
+
+15. Curr Alzheimer Res. 2013 Jun;10(5):507-15.
+
+Treadmill exercise prevents learning and memory impairment in Alzheimer's
+disease-like pathology.
+
+Dao AT(1), Zagaar MA, Levine AT, Salim S, Eriksen JL, Alkadhi KA.
+
+Author information: 
+(1)Department of PPS, College of Pharmacy, University of Houston, Houston, TX
+77204-5037, USA.
+
+Alzheimer's disease (AD) is a neurodegenerative disorder that is characterized by
+progressive memory loss. In contrast, accumulating evidence suggests a
+neuroprotective role of regular exercise in aging associated memory impairment.
+In this study, we investigated the ability of regular exercise to prevent
+impairments of short-term memory (STM) and early long-term potentiation (E-LTP)
+in area CA1 of the hippocampus in a rat model of AD (i.c.v. infusion of 250
+pmol/day Aβ1-42 peptides). We utilized behavioral assessment, in vivo
+electrophysiological recording, and immunoblotting in 4 groups of adult Wistar
+rats: control, treadmill exercise (Ex), β-amyloid-infused (Aβ), and
+amyloid-infused/treadmill exercised (Ex/Aβ). Our findings indicated that Aβ rats 
+made significantly more errors in the radial arm water maze (RAWM) compared to
+all other groups and exhibited suppressed E-LTP in area CA1, which correlated
+with deleterious alterations in the levels of memory and E-LTP-related signaling 
+molecules including calcineurin (PP2B), brain derivedneurotrophic factor (BDNF)
+and phosphorylated CaMKII (p-CaMKII). Compared to controls, Ex and Ex/Aβ rats
+showed a similar behavioral performance and a normal E-LTP with no detrimental
+changes in the levels of PP2B, BDNF, and p- CaMKII. We conclude that treadmill
+exercise maybe able to prevent cognitive impairment associated with AD pathology.
+
+PMCID: PMC4004077
+PMID: 23627709  [PubMed - indexed for MEDLINE]
+
+
+16. BMJ. 2013 Apr 17;346:f2422. doi: 10.1136/bmj.f2422.
+
+Exercise slows decline in adults with Alzheimer's disease.
+
+[No authors listed]
+
+PMID: 23596226  [PubMed - indexed for MEDLINE]
+
+
+17. Curr Alzheimer Res. 2013 Jun;10(5):482-93.
+
+Rapid improvement of canine cognitive dysfunction with immunotherapy designed for
+Alzheimer's disease.
+
+Bosch MN(1), Gimeno-Bayón J, Rodríguez MJ, Pugliese M, Mahy N.
+
+Author information: 
+(1)Medivet Pharma SL, Masies de Roda, Barcelona, Spain. neusbosch@ub.edu
+
+Immunotherapy against amyloid-β(Aβ) may improve rodent cognitive function by
+reducing amyloid neuropathology and is being validated in clinical trials with
+positive preliminary results. However, for a complete understanding of the direct
+and long-term immunization responses in the aged patient, and also to avoid
+significant side effects, several key aspects remain to be clarified. Thus, to
+investigate brain Aβ clearance and Th2 responses in the elderly, and the reverse 
+inflammatory events not found in the immunized rodent, better Alzheimer's disease
+(AD) models are required. In the aged familiar canine with a Cognitive
+Dysfunction Syndrome (CDS) we describe the rapid effectiveness and the full
+safety profile of a new active vaccine candidate for human AD prevention and
+treatment. In these aged animals, besidesa weak immune system, the antibody
+response activated a coordinated central and peripheral Aβ clearance, that
+rapidly improved their cognitive function in absence of any side effects. Our
+results also confirm the interest to use familiar dogs to develop innovative and 
+reliable therapies for AD.
+
+PMID: 23566345  [PubMed - indexed for MEDLINE]
+
+
+18. Mayo Clin Health Lett. 2013 Jan;31(1):4-5.
+
+Exercise and brain health. Preventing Alzheimer's and more.
+
+[No authors listed]
+
+PMID: 23565563  [PubMed - indexed for MEDLINE]
+
+
+19. J Gerontol Nurs. 2013 May;39(5):11-4. doi: 10.3928/00989134-20130313-04. Epub
+2013 Mar 22.
+
+Monitoring exercise delivery to increase participation adherence in older adults 
+with Alzheimer's disease.
+
+Watson E(1), Yu F.
+
+Author information: 
+(1)M.C. Perry High School, Department of Defense Education Activity, Marine Corps
+Air Station, Iwakuni, Japan. elle.watson@pac.dodea.edu
+
+There are many established benefits of exercise for older adults. Emerging
+studies suggest that it may even be able to slow the progression of Alzheimer's
+disease (AD) in older adults with the disease. However, it is yet unknown how
+bedside nurses can monitor ongoing exercise participation in this population due 
+to the complexity and impact of AD symptoms. The purpose of this study is to
+provide bedside nurses with tools to capture actual received exercise doses to
+ensure adequate exercise participation by older adults with AD. This study is a
+secondary data analysis of a master study in which 8 participants who were
+clinically diagnosed with AD participated in moderate intensity aerobic exercise 
+for 10 to 45 minutes, three times per week, for 6 months. The results show that
+participants were able to meet the overall exercise prescription 74.3% of the
+time. The findings of this study suggest that bedside nurses are able to monitor 
+the actual exercise delivery (frequency, intensity, and duration) to ensure
+exercise participation.
+
+Copyright 2013, SLACK Incorporated.
+
+PMID: 23506126  [PubMed - indexed for MEDLINE]
+
+
+20. Duke Med Health News. 2013 Feb;19(2):4-5.
+
+Enocuraging news in Alzheimer's prevention and treatment. Research continues to
+underscore the value of cardiovascular health in relation to brain function.
+
+[No authors listed]
+
+PMID: 23495420  [PubMed - indexed for MEDLINE]
+
+
+21. J Nutr Health Aging. 2013 Mar;17(3):252-7. doi: 10.1007/s12603-012-0402-8.
+
+A review of multidomain interventions to support healthy cognitive ageing.
+
+Schneider N(1), Yvon C.
+
+Author information: 
+(1)Nestec Ltd., Nestlé Research Center Lausanne, Switzerland.
+
+OBJECTIVE: The risk for cognitive decline and for developing Alzheimer's disease 
+increases with age. The aetiology is assumed to be of multi-factorial origin, and
+treatment opportunities are lacking. Despite the multi-factorial origin, many
+intervention studies focused on single factors to influence cognitive health with
+inconsistent findings. In this view, more and more intervention studies aim to
+intervene on multiple factors simultaneously to affect or slow down cognitive
+decline. The purpose of this paper is to give an overview of these multidomain
+intervention trials.
+METHODS: We conducted a non-systematic literature search in Medline, Scopus,
+Cochrane Library, and clinical trials databases up to October 2011 to review
+multidomain interventions that investigated effects of combined lifestyle-related
+factors on cognitive decline and the progression of dementia.
+RESULTS: Interest in multidomain interventions increased over the past years. We 
+identified six completed and published trials and eight ongoing or not yet
+published studies that investigated effects on cognitive outcomes. First
+completed trials yielded promising results for the combination of exercise and
+mental training and diet and behavioural weight management. Results of ongoing
+multidomain trials are awaited.
+CONCLUSIONS: Some evidence suggests that strategies which target multiple factors
+simultaneously may prove more effective than those focusing on a single mechanism
+or domain. Larger high-quality randomized controlled trials are required to
+systematically investigate the cognitive effect of programs comprising physical
+and mental activity as well as nutritional aspects.
+
+PMID: 23459978  [PubMed - indexed for MEDLINE]
+
+
+22. J Nutr Health Aging. 2013 Mar;17(3):235-9. doi: 10.1007/s12603-012-0394-4.
+
+Gait variability at fast-pace walking speed: a biomarker of mild cognitive
+impairment?
+
+Beauchet O(1), Allali G, Launay C, Herrmann FR, Annweiler C.
+
+Author information: 
+(1)Department of Neuroscience, Division of Geriatric Medicine, Angers University
+Hospital, Angers, France. olbeauchet@chu-angers.fr
+
+BACKGROUND: The interpretation of the increase in stride-to-stride variability of
+stride time (STV) regarding the evolution of cognitive deficits across the
+dementia spectrum is matter of debate.
+OBJECTIVE: The aim of this study was to compare STV at usual and fast-pace
+walking speeds of MCI patients with that of cognitively healthy individuals (CHI)
+and Alzheimer's disease (AD) patients with mild dementia, while considering the
+effects of potential confounders.
+METHODS: STV while walking at usual and fast-pace walking speeds was recorded
+with the GAITRite® system from 116 older adults (mean age 75.6±6.5 years; 55.2%
+female) divided into 3 groups according to their cognitive status (44 CHI, 39 MCI
+patients and 33 AD patients with mild dementia).
+RESULTS: The full adjusted multiple linear regression models showed that high STV
+was associated with slow gait speed at usual-pace walking speed (P=0.002) and
+with the MCI status at fast-pace walking speed (P=0.015).
+CONCLUSIONS: High STV at fast-pace walking speed was a specific gait disturbance 
+of MCI patients in the sample of studied participants, and thus could be used in 
+the future as a specific biomarker of MCI patients.
+
+PMID: 23459976  [PubMed - indexed for MEDLINE]
+
+
+23. J Gerontol A Biol Sci Med Sci. 2013 Sep;68(9):1083-90. doi:
+10.1093/gerona/glt013. Epub 2013 Feb 18.
+
+Frailty and incident dementia.
+
+Gray SL(1), Anderson ML, Hubbard RA, LaCroix A, Crane PK, McCormick W, Bowen JD, 
+McCurry SM, Larson EB.
+
+Author information: 
+(1)PharmD, MS, School of Pharmacy, University of Washington, Box 357630, Seattle, WA
+98195-7630, USA. slgray@u.washington.edu
+
+BACKGROUND: We sought to examine whether frailty is associated with dementia,
+Alzheimer's disease (AD), and non-AD dementia risk.
+METHODS: This is a prospective population-based cohort derived from an integrated
+health maintenance organization. The sample consisted of 2,619 participants aged 
+65 and older without dementia at baseline followed from 1994 to 2010. Frailty was
+defined as having at least 3 of the following criteria: weakness (grip strength),
+slowness (walking speed), weight loss, low physical activity, and self-reported
+exhaustion. Follow-up occurred every 2 years to identify incident dementia,
+possible or probable AD, and non-AD dementia using standard research criteria.
+Covariates came from self-report and study measures. We used adjusted Cox
+proportional hazards models to examine the association between frailty and each
+outcome.
+RESULTS: Over a mean follow-up of 6.5 years, 521 participants developed dementia 
+(of which 448 developed AD). In the model adjusted for age, sex, education, and
+race, the hazard ratio for frailty was 1.78 (95% confidence interval [CI]
+1.32-2.40). In the fully adjusted models, the hazard ratio for frailty was 1.20
+for all-cause dementia (95% CI 0.85-1.69), 1.08 for AD (95% CI 0.74-1.57), and
+2.57 for non-AD dementia (95% CI 1.08-6.11). For all-cause dementia, we found an 
+interaction between baseline cognitive score and frailty (p = .02); hazard ratio 
+for frailty was 1.78 for those with higher global cognition (95% CI 1.14-2.78)
+and 0.79 for those with lower global cognition (95% CI 0.50-1.26).
+CONCLUSION: Frailty was associated with dementia when adjusting only for
+demographic variables but not in the fully adjusted model. Frailty was associated
+with higher risk of developing non-AD dementia but not AD. Although frailty was
+not associated with all-cause dementia in the entire sample, an association did
+exist in participants with higher cognitive scores. Mechanisms underlying these
+associations remain to be elucidated.
+
+PMCID: PMC3738027
+PMID: 23419778  [PubMed - indexed for MEDLINE]
+
+
+24. Geriatr Nurs. 2013 May-Jun;34(3):181-6. doi: 10.1016/j.gerinurse.2012.12.014.
+Epub 2013 Feb 12.
+
+Improving recruitment, retention, and adherence to 6-month cycling in Alzheimer's
+disease.
+
+Yu F.
+
+Author information: 
+University of Minnesota, School of Nursing, Minneapolis, MN, USA.
+yuxxx244@umn.edu
+
+There is a pressing need to establish recruitment, retention, and adherence
+feasibility to inform clinical trials that will evaluate how exercise affects the
+symptoms and disease trajectory in Alzheimer's disease (AD). This paper reported 
+the recruitment rate, retention, and adherence from a 6-month cycling study in
+community-dwelling older adults with mild-to-moderate AD using a single-group,
+repeated-measures design. Seven recruitment strategies were tested. Participants 
+were prescribed an individualized, 15-45-min moderate intensity cycling 3 times a
+week for 6 months. The results showed a 1.87 recruitment rate (No. of
+participants recruited per month per site), 78.6% retention (No. of
+completers/No. of enrolled participants), and 86.4% adherence (number sessions
+meeting prescription dose/total number of sessions). The findings addressed a
+major gap in aerobic exercise studies in AD. Successful recruitment relies on
+community partnership, whereas strategies for ensuring participant exercise
+safety collectively improved retention and adherence.
+
+Copyright © 2013. Published by Mosby, Inc.
+
+PMID: 23414638  [PubMed - indexed for MEDLINE]
+
+
+25. Eur J Epidemiol. 2013 Mar;28(3):277-83. doi: 10.1007/s10654-013-9773-3. Epub 2013
+Feb 6.
+
+The association between physical activity and dementia in an elderly population: 
+the Rotterdam Study.
+
+de Bruijn RF(1), Schrijvers EM, de Groot KA, Witteman JC, Hofman A, Franco OH,
+Koudstaal PJ, Ikram MA.
+
+Author information: 
+(1)Department of Epidemiology, Erasmus MC University Medical Center, PO Box 2040,
+3000 CA, Rotterdam, The Netherlands.
+
+Erratum in
+    Eur J Epidemiol. 2013 May;28(5):447-8.
+
+Several studies have associated physical activity with the risk of dementia, but 
+mostly did so during short follow-up. It remains unclear whether physical
+activity also affects dementia during longer follow-up. We examined the
+association between physical activity and risk of dementia during a follow-up
+period up to 14 years. From 1997 to 1999, physical activity was assessed using a 
+validated questionnaire in 4,406 elderly persons (age range 61-97) from the
+prospective, population-based Rotterdam Study. Follow-up for dementia was
+complete until January 1, 2011. We used Cox proportional hazards models to assess
+the association between physical activity and incident dementia. Next, we
+stratified follow-up time using a cut-off of 4 years. We separately investigated 
+dementia due to Alzheimer disease. During 38,631 person-years, 583 participants
+developed dementia. When adjusting for age and sex, we found a borderline
+significant association between higher physical activity and lower risk of
+dementia (HR 0.95; 95% CI 0.87-1.04). This association was confined to follow-up 
+up to 4 years (HR 0.82; 95% CI 0.71-0.95), and not to follow-up of at least 4
+years (HR 1.04; 95% CI 0.93-1.16). Additional adjustments only slightly
+attenuated the associations. A similar pattern was present for Alzheimer disease.
+We found a higher level of physical activity to be associated with a lower risk
+of dementia. This association was confined to follow-up for up to 4 years and not
+to longer follow-up, suggesting either a role for reverse causality or only a
+short term effect of late-life physical activity in an elderly population.
+
+PMID: 23385659  [PubMed - indexed for MEDLINE]
+
+
+26. Neurotox Res. 2013 Aug;24(2):148-63. doi: 10.1007/s12640-012-9373-0. Epub 2013
+Jan 11.
+
+Neuroprotective effect of physical exercise in a mouse model of Alzheimer's
+disease induced by β-amyloid₁₋₄₀ peptide.
+
+Souza LC(1), Filho CB, Goes AT, Fabbro LD, de Gomes MG, Savegnago L, Oliveira MS,
+Jesse CR.
+
+Author information: 
+(1)Laboratório de Avaliações Farmacológicas e Toxicológicas Aplicadas às Moléculas
+Bioativas-LaftamBio Pampa, Universidade Federal do Pampa, Itaqui, RS, CEP
+97650-000, Brazil.
+
+This study was designed to investigate the potential neuroprotective effect of
+exercise in a mouse model of Alzheimer's disease (AD) induced by
+intracerebroventricular (i.c.v.) injection of beta-amyloid₁₋₄₀ (Aβ₁₋₄₀) peptide. 
+For this aim, male Swiss Albino mice were submitted to swimming training (ST)
+with progressive increase in intensity and duration for 8 weeks before Aβ₁₋₄₀
+administration (400 pmol/animal; 3 μl/site, i.c.v. route). The cognitive
+behavioral, oxidative stress, and neuroinflammatory markers in hippocampus and
+prefrontal cortex of mice were assessed 7 days after Aβ₁₋₄₀ administration. Our
+results demonstrated that ST was effective in preventing impairment in short- and
+long-term memories in the object recognition test. ST attenuated the increased
+levels of reactive species and decreased non-protein thiol levels in hippocampus 
+and prefrontal cortex induced by Aβ₁₋₄₀. Also, Aβ₁₋₄₀ inhibited superoxide
+dismutase activity and increased glutathione peroxidase, glutathione reductase,
+and glutathione S-transferase activities in hippocampus and prefrontal
+cortex-alterations that were mitigated by ST. In addition, ST was effective
+against the increase of tumor necrosis factor-alpha and interleukin-1 beta levels
+and the decrease of interleukin-10 levels in hippocampus and prefrontal cortex.
+This study confirmed the hypothesis that exercise is able to protect against some
+mechanisms of Aβ₁₋₄₀-induced neurotoxicity. In conclusion, we suggest that
+exercise can prevent the cognitive decline, oxidative stress, and
+neuroinflammation induced by Aβ₁₋₄₀ in mice supporting the hypothesis that
+exercise can be used as a non-pharmacological tool to reduce the symptoms of AD.
+
+PMID: 23307759  [PubMed - indexed for MEDLINE]
+
+
+27. Am J Phys Med Rehabil. 2013 Aug;92(8):676-85. doi: 10.1097/PHM.0b013e318278dcb3.
+
+A longitudinal study of change in falls risk and balance and mobility in healthy 
+older people and people with Alzheimer disease.
+
+Suttanon P(1), Hill KD, Said CM, Dodd KJ.
+
+Author information: 
+(1)Department of Physiotherapy, Faculty of Allied Health Sciences, Thammasat
+University, Prathum Thani, Thailand.
+
+OBJECTIVE: The aim of this study was to determine the rate of change in falls
+risk and balance and mobility performance in people with Alzheimer disease (AD)
+compared with those of healthy older people over a 1-yr period.
+DESIGN: A 1-yr follow-up study of change in levels of falls risk, balance, and
+mobility performance in 15 community-dwelling older people with mild to moderate 
+AD and 15 healthy age-matched older people was conducted. Each participant
+completed a comprehensive assessment of balance and mobility, falls and falls
+risk, and level of physical activity at baseline and 1 yr later.
+RESULTS: The rate of increase in the number of falls and risk of falling was
+greater in people with AD. The rate of deterioration on a number of balance and
+mobility measures was also significantly greater in people with AD compared with 
+the healthy older people.
+CONCLUSIONS: People with mild to moderate AD have an increased rate of decline in
+falls risk, balance, and mobility over a 12-mo period compared with age-matched
+healthy older people. Given this increased rate of decline, intermittent review
+of falls, balance and mobility, and interventions to address identified
+contributory risk factors should be considered by health practitioners.
+
+PMID: 23221675  [PubMed - indexed for MEDLINE]
+
+
+28. Mol Psychiatry. 2013 Oct;18(10):1053-4. doi: 10.1038/mp.2012.168. Epub 2012 Nov
+27.
+
+Amyloid-β oligomers link depressive-like behavior and cognitive deficits in mice.
+
+Ledo JH(1), Azevedo EP, Clarke JR, Ribeiro FC, Figueiredo CP, Foguel D, De Felice
+FG, Ferreira ST.
+
+Author information: 
+(1)Institute of Medical Biochemistry, Federal University of Rio de Janeiro, Rio de
+Janeiro, Brazil.
+
+PMCID: PMC3781315
+PMID: 23183490  [PubMed - indexed for MEDLINE]
+
+
+29. Clin Rehabil. 2013 May;27(5):427-38. doi: 10.1177/0269215512460877. Epub 2012 Nov
+1.
+
+Feasibility, safety and preliminary evidence of the effectiveness of a home-based
+exercise programme for older people with Alzheimer's disease: a pilot randomized 
+controlled trial.
+
+Suttanon P(1), Hill KD, Said CM, Williams SB, Byrne KN, LoGiudice D,
+Lautenschlager NT, Dodd KJ.
+
+Author information: 
+(1)School of Physiotherapy, Faculty of Health Sciences, La Trobe University,
+Bundoora, Victoria, Australia. plaiwan2277@gmail.com
+
+OBJECTIVE: To evaluate the feasibility and safety of a home-based exercise
+programme for people with Alzheimer's disease, and to provide preliminary
+evidence of programme effectiveness in improving balance and mobility and
+reducing falls risk.
+DESIGN: A randomized controlled trial.
+SETTING: Community.
+PARTICIPANTS: Forty people with mild to moderate Alzheimer's disease (mean age
+81.9, SD 5.72; 62.5% female).
+INTERVENTIONS: Participants were randomized to a six-month home-based
+individually tailored balance, strengthening and walking exercise programme
+(physiotherapist) or a six-month home-based education programme (control)
+(occupational therapist). Both programmes provided six home-visits and five
+follow-up phone calls.
+MAIN MEASURES: Balance, mobility, falls and falls risk were measured at baseline 
+and programme completion. Intention-to-treat analysis using a generalized linear 
+model with group allocation as a predictor variable was performed to evaluate
+programme effectiveness. Feasibility and adverse events were systematically
+recorded at each contact.
+RESULTS: Fifty-eight per cent of the exercise group finished the programme,
+completing an average of 83% of prescribed sessions, with no adverse events
+reported. Functional Reach improved significantly (P = 0.002) in the exercise
+group (mean (SD), 2.28 (4.36)) compared to the control group (-2.99 (4.87)).
+Significant improvement was also observed for the Falls Risk for Older People -
+Community score (P = 0.008) and trends for improvement on several other balance, 
+mobility, falls and falls risk measures for the exercise group compared to the
+control group.
+CONCLUSIONS: The exercise programme was feasible and safe and may help improve
+balance and mobility performance and reduce falls risk in people with Alzheimer's
+disease.
+
+PMID: 23117349  [PubMed - indexed for MEDLINE]
+
+
+30. Proc Nutr Soc. 2013 Feb;72(1):153-9. doi: 10.1017/S0029665112002741. Epub 2012
+Oct 25.
+
+Impact of genetic risk assessment on nutrition-related lifestyle behaviours.
+
+Vernarelli JA.
+
+Author information: 
+Department of Nutritional Sciences, The Pennsylvania State University, University
+Park, PA 16802, USA. jvern@psu.edu
+
+Genetic susceptibility testing for common complex disease is a practice that is
+currently in clinical use. There are two types of gene mutations, and therefore, 
+two varieties of genotype testing: deterministic and susceptibility. As the term 
+suggests, deterministic genes determine whether or not a person will develop a
+given trait in mendelian fashion, such as Huntington's disease. Genotype
+screening for such deterministic mutations has existed for decades, and is
+commonly used in routine medical practice. In recent years, the sequencing of the
+human genome has identified several 'susceptibility genes' or genes with
+incomplete penetrance. Mutations in these genes may increase disease
+susceptibility, but are not causative for disease. Genetic susceptibility testing
+allows unaffected individuals to obtain risk information for a variety of common 
+complex diseases and health conditions including Alzheimer's disease (AD), CVD,
+cancer and diabetes. The availability of genetic susceptibility testing has
+increased over the past decade, and several studies are now focusing on the
+impact that genetic testing has on health and other lifestyle behaviours related 
+to nutrition. The aim of this paper is to review the literature and evaluate
+what, if any, impact genetic risk assessment has on behaviours related to
+nutrition and physical activity. This paper summarises seven clinical studies
+that evaluated the impact of disclosing genetic risk information for disease on
+nutrition-related health behaviour changes. Of these seven studies, only three
+studies reported that health behaviour change was influenced by genotype
+disclosure.
+
+PMCID: PMC3756543
+PMID: 23095764  [PubMed - indexed for MEDLINE]
+
+
+31. Arch Gerontol Geriatr. 2013 Jan-Feb;56(1):96-103. doi:
+10.1016/j.archger.2012.06.016. Epub 2012 Sep 5.
+
+Walking stabilizes cognitive functioning in Alzheimer's disease (AD) across one
+year.
+
+Winchester J(1), Dick MB, Gillen D, Reed B, Miller B, Tinklenberg J, Mungas D,
+Chui H, Galasko D, Hewett L, Cotman CW.
+
+Author information: 
+(1)Institute for Memory Impairments & Neurological Disorders, University of
+California, Irvine, CA 92697, United States.
+
+AD is a public health epidemic, which seriously impacts cognition, mood and daily
+activities; however, one type of activity, exercise, has been shown to alter
+these states. Accordingly, we sought to investigate the relationship between
+exercise and mood, in early-stage AD patients (N=104) from California, over a
+1-year period. Patients completed the Mini-Mental State Examination (MMSE),
+Geriatric Depression Scale (GDS), and Blessed-Roth Dementia Rating Scale (BRDRS),
+while their caregivers completed the Yale Physical Activity Survey (YALE),
+Profile of Mood States (POMS), the Neuropsychiatric Inventory (NPI) and
+Functional Abilities Questionnaire (FAQ). Approximately half of the participants 
+were female, from a variety of ethnic groups (Caucasian=69.8%; Latino/Hispanic
+Americans=20.1%). Our results demonstrated that the patients spent little time
+engaged in physical activity in general, their overall activity levels decreased 
+over time, and this was paired with a change in global cognition (e.g., MMSE
+total score) and affect/mood (e.g., POMS score). Patients were parsed into Active
+and Sedentary groups based on their Yale profiles, with Active participants
+engaged in walking activities, weekly, over 1 year. Here, Sedentary patients had 
+a significant decline in MMSE scores, while the Active patients had an
+attenuation in global cognitive decline. Importantly, among the Active AD
+patients, those individuals who engaged in walking for more than 2 h/week had a
+significant improvement in MMSE scores. Structured clinical trials which seek to 
+increase the amount of time AD patients were engaged in walking activities and
+evaluate the nature and scope of beneficial effects in the brain are warranted.
+
+Copyright © 2012. Published by Elsevier Ireland Ltd.
+
+PMCID: PMC3766353
+PMID: 22959822  [PubMed - indexed for MEDLINE]
+
+
+32. Geriatr Gerontol Int. 2013 Apr;13(2):437-42. doi:
+10.1111/j.1447-0594.2012.00927.x. Epub 2012 Aug 31.
+
+Global brain atrophy is associated with physical performance and the risk of
+falls in older adults with cognitive impairment.
+
+Yamada M(1), Takechi H, Mori S, Aoyama T, Arai H.
+
+Author information: 
+(1)Department of Human Health Sciences, Kyoto University Graduate School of
+Medicine, Kyoto, Japan. yamada@hs.med.kyoto-u.ac.jp
+
+AIM: Falls are common in patients with cognitive disorder. The purpose of this
+study was to determine whether global brain atrophy is associated with cognitive 
+function, physical performance and fall incidents in older adults with mild
+cognitive disorder.
+METHODS: A total of 31 older adults with mild cognitive disorders (mean age 78.9 
+± 7.3 years) were studied, and 10 of them had experienced falls and the others
+had not in the past 1 year. Cognitive function and physical performance were
+measured in these patients. Global brain atrophy was determined by the
+Voxel-Based Specific Regional Analysis System for Alzheimer's Disease software.
+RESULTS: Fallers showed significantly worse scores than the non-fallers in the
+Global Brain Atrophy Index, Clock Drawing Test (CDT), Verbal Fluency Test
+(animal), maximum walking time and Timed Up & Go (TUG) Test. The Global Brain
+Atrophy Index was correlated with the Verbal Fluency Test (animal; r = -0.522),
+the Verbal Fluency Test with letter (ka; r = -0.337), CDT (r = -0.547), TUG (r = 
+0.276) and Five Chair Stands Test (r = 0.303) by age-adjusted correlation
+analyses. Stepwise regression analysis showed that the Global Brain Atrophy Index
+(β = 1.265, 95% CI 1.022-1.567) was a significant and independent determinant of 
+falls (R(2) = 0.356, P = 0.003).
+CONCLUSION: Global brain atrophy might be indicated as one of the risk factors
+for falls in older adults with mild cognitive disorders.
+
+© 2012 Japan Geriatrics Society.
+
+PMID: 22935103  [PubMed - indexed for MEDLINE]
+
+
+33. Geriatr Gerontol Int. 2013 Apr;13(2):322-8. doi:
+10.1111/j.1447-0594.2012.00899.x. Epub 2012 Jun 21.
+
+Effects of resistance training on the performance of activities of daily living
+in patients with Alzheimer's disease.
+
+Garuffi M(1), Costa JL, Hernández SS, Vital TM, Stein AM, dos Santos JG, Stella
+F.
+
+Author information: 
+(1)Institute of Biosciences, Department of Physical Education, UNESP - University
+Estadual Paulista, São Paulo, Brazil. marcelo.garuffi@gmail.com
+
+AIM: The objective of this study was to investigate the effects of resistance
+training in activities of daily living performance in Alzheimer's disease (AD)
+patients.
+METHODS: An exploratory and longitudinal study, lasting for 16 weeks, with the
+participation of 34 patients divided equally in: the training group (TG), who
+participated in a resistance training protocol (three sets of 20 repetitions in
+five exercises); and the social gathering group (SGG), who participated in a
+social interaction protocol (i.e. group dynamics, writing and reading
+activities).
+RESULTS: We observed significant differences between the groups in moving around 
+the house, climbing stairs, standing up from the floor and putting on socks
+tests.
+CONCLUSION: This study showed that resistance training improves agility, lower
+limb strength, balance and flexibility in AD patients, while SGG protocol is
+important to improve the agility.
+
+© 2012 Japan Geriatrics Society.
+
+PMID: 22726761  [PubMed - indexed for MEDLINE]
+
+
+34. West J Nurs Res. 2013 Jan;35(1):24-38. doi: 10.1177/0193945911420174. Epub 2011
+Sep 12.
+
+Affecting cognition and quality of life via aerobic exercise in Alzheimer's
+disease.
+
+Yu F(1), Nelson NW, Savik K, Wyman JF, Dysken M, Bronas UG.
+
+Author information: 
+(1)University of Minnesota School of Nursing, Minneapolis 55455, USA.
+yuxxx244@umn.edu
+
+Aerobic exercise is a promising behavioral therapy for Alzheimer's disease (AD), 
+yet few studies have investigated the effect of aerobic exercise on cognition in 
+AD. The purpose of this pilot study was to examine the effect of 6-month aerobic 
+exercise on the change in executive function, global cognition, quality of life
+(QOL), and depression in community-dwelling older adults with mild to moderate
+AD. A single group, repeated measures design with outcomes measured at baseline, 
+3 months, and 6 months was used. Results show that there were no significant
+changes in any measures except for depression (p = .026). There was a trend
+toward improvement in executive function and QOL with moderate effect sizes (ESs)
+and a trend toward deterioration in global cognition with moderate to large ESs. 
+Randomized controlled trials are needed to evaluate the therapeutic effect of
+aerobic exercise in older adults with AD.
+
+PMID: 21911546  [PubMed - indexed for MEDLINE]
+

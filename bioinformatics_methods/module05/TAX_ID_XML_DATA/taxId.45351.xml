@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<!DOCTYPE TaxaSet PUBLIC "-//NLM//DTD Taxon, 14th January 2002//EN" "https://www.ncbi.nlm.nih.gov/entrez/query/DTD/taxon.dtd">
+<TaxaSet><Taxon>
+    <TaxId>45351</TaxId>
+    <ScientificName>Nematostella vectensis</ScientificName>
+    <OtherNames>
+        <GenbankCommonName>starlet sea anemone</GenbankCommonName>
+        <Name>
+            <ClassCDE>authority</ClassCDE>
+            <DispName>Nematostella vectensis Stephenson, 1935</DispName>
+        </Name>
+    </OtherNames>
+    <ParentTaxId>45350</ParentTaxId>
+    <Rank>species</Rank>
+    <Division>Invertebrates</Division>
+    <GeneticCode>
+        <GCId>1</GCId>
+        <GCName>Standard</GCName>
+    </GeneticCode>
+    <MitoGeneticCode>
+        <MGCId>4</MGCId>
+        <MGCName>Mold Mitochondrial; Protozoan Mitochondrial; Coelenterate Mitochondrial; Mycoplasma; Spiroplasma</MGCName>
+    </MitoGeneticCode>
+    <Lineage>cellular organisms; Eukaryota; Opisthokonta; Metazoa; Eumetazoa; Cnidaria; Anthozoa; Hexacorallia; Actiniaria; Edwardsiidae; Nematostella</Lineage>
+    <LineageEx>
+        <Taxon>
+            <TaxId>131567</TaxId>
+            <ScientificName>cellular organisms</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>2759</TaxId>
+            <ScientificName>Eukaryota</ScientificName>
+            <Rank>superkingdom</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>33154</TaxId>
+            <ScientificName>Opisthokonta</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>33208</TaxId>
+            <ScientificName>Metazoa</ScientificName>
+            <Rank>kingdom</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>6072</TaxId>
+            <ScientificName>Eumetazoa</ScientificName>
+            <Rank>no rank</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>6073</TaxId>
+            <ScientificName>Cnidaria</ScientificName>
+            <Rank>phylum</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>6101</TaxId>
+            <ScientificName>Anthozoa</ScientificName>
+            <Rank>class</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>6102</TaxId>
+            <ScientificName>Hexacorallia</ScientificName>
+            <Rank>subclass</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>6103</TaxId>
+            <ScientificName>Actiniaria</ScientificName>
+            <Rank>order</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>45349</TaxId>
+            <ScientificName>Edwardsiidae</ScientificName>
+            <Rank>family</Rank>
+        </Taxon>
+        <Taxon>
+            <TaxId>45350</TaxId>
+            <ScientificName>Nematostella</ScientificName>
+            <Rank>genus</Rank>
+        </Taxon>
+    </LineageEx>
+    <CreateDate>1996/01/26 10:56:00</CreateDate>
+    <UpdateDate>2016/08/18 11:57:57</UpdateDate>
+    <PubDate>1996/02/02 00:00:00</PubDate>
+</Taxon>
+
+</TaxaSet>

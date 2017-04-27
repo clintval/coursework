@@ -1,0 +1,17 @@
+((((
+1_Homo_sapiens
+:0.02490,
+4_Oryctolagus_cuniculus
+:0.02490):0.09342,(
+2_Rattus_norvegicus
+:0.00310,
+3_Mus_musculus
+:0.00310):0.11523):0.02201,((
+5_Mesocricetus_auratus
+:0.01041,
+6_Mus_musculus
+:0.01041):0.04606,
+7_Sus_scrofa
+:0.05647):0.08387):0.39111,
+8_Gallus_gallus
+:0.53144)

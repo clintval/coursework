@@ -1,0 +1,109 @@
+<svg height="1280" width="1920" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style type="text/css"><![CDATA[
+	polyline { fill: none; stroke: black; stroke-width: 1 }
+	path { fill: none; stroke: black; stroke-width: 1 }
+	line { fill: none; stroke: black; stroke-width: 1 }
+	circle.node_circle  {}
+	circle.taxon_circle {}
+	text.node_text      {}
+	text.taxon_text     {}
+	line.scale_bar      {}
+	text.scale_label    {}
+	line.scale_major    {}
+	line.scale_minor    {}
+]]></style>
+    <path d="M1641,123 C1641,197 1719,197 1719,197" style="stroke: black; stroke-width: 1" />
+    <text class="taxon_text" style="" transform="rotate( 1719.96857653589 197.5)" x="1725" y="201">4 Oryctolagus cuniculus</text>
+    <path d="M1641,123 C1641,50 1719,50 1719,50" style="stroke: black; stroke-width: 1" />
+    <text class="taxon_text" style="" transform="rotate( 1719.96857653589 50)" x="1725" y="54">1 Homo sapiens</text>
+    <path d="M1710,418 C1710,492 1719,492 1719,492" style="stroke: black; stroke-width: 1" />
+    <text class="taxon_text" style="" transform="rotate( 1720 492.5)" x="1725" y="496">3 Mus musculus</text>
+    <path d="M1710,418 C1710,345 1719,345 1719,345" style="stroke: black; stroke-width: 1" />
+    <text class="taxon_text" style="" transform="rotate( 1720 345)" x="1725" y="349">2 Rattus norvegicus</text>
+    <path d="M1348,271 C1348,418 1710,418 1710,418" style="stroke: black; stroke-width: 1" />
+    <path d="M1348,271 C1348,123 1641,123 1641,123" style="stroke: black; stroke-width: 1" />
+    <path d="M1687,713 C1687,787 1720,787 1720,787" style="stroke: black; stroke-width: 1" />
+    <text class="taxon_text" style="" transform="rotate( 1720 787.5)" x="1726" y="791">6 Mus musculus</text>
+    <path d="M1687,713 C1687,640 1720,640 1720,640" style="stroke: black; stroke-width: 1" />
+    <text class="taxon_text" style="" transform="rotate( 1720 640)" x="1726" y="644">5 Mesocricetus auratus</text>
+    <path d="M1542,824 C1542,935 1719,935 1719,935" style="stroke: black; stroke-width: 1" />
+    <text class="taxon_text" style="" transform="rotate( 1720 935)" x="1725" y="939">7 Sus scrofa</text>
+    <path d="M1542,824 C1542,713 1687,713 1687,713" style="stroke: black; stroke-width: 1" />
+    <path d="M1279,547 C1279,824 1542,824 1542,824" style="stroke: black; stroke-width: 1" />
+    <path d="M1279,547 C1279,271 1348,271 1348,271" style="stroke: black; stroke-width: 1" />
+    <path d="M50,815 C50,1082 1719,1082 1719,1082" style="stroke: black; stroke-width: 1" />
+    <text class="taxon_text" style="" transform="rotate( 1719.96857653589 1082.5)" x="1725" y="1086">8 Gallus gallus</text>
+    <path d="M50,815 C50,547 1279,547 1279,547" style="stroke: black; stroke-width: 1" />
+    <line class="scale_bar" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="50" x2="1720" y1="1275" y2="1275" />
+    <text class="scale_label" style="" transform="rotate()" x="1726" y="1275">MYA</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="50" x2="50" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="50" y="1245">0</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="217" x2="217" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="217" y="1245">0.053145</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="384" x2="384" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="384" y="1245">0.10629</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="551" x2="551" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="551" y="1245">0.159435</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="718" x2="718" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="718" y="1245">0.21258</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="885" x2="885" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="885" y="1245">0.265725</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1052" x2="1052" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="1052" y="1245">0.31887</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1219" x2="1219" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="1219" y="1245">0.372015</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1386" x2="1386" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="1386" y="1245">0.42516</text>
+    <line class="scale_major" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1553" x2="1553" y1="1275" y2="1255" />
+    <text class="major_label" style="" transform="rotate()" x="1553" y="1245">0.478305</text>
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="50" x2="50" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="83.4" x2="83.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="116.8" x2="116.8" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="150.2" x2="150.2" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="183.6" x2="183.6" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="217" x2="217" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="250.4" x2="250.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="283.8" x2="283.8" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="317.2" x2="317.2" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="350.6" x2="350.6" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="384" x2="384" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="417.4" x2="417.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="450.8" x2="450.8" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="484.2" x2="484.2" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="517.6" x2="517.6" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="551" x2="551" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="584.4" x2="584.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="617.8" x2="617.8" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="651.2" x2="651.2" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="684.6" x2="684.6" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="718" x2="718" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="751.4" x2="751.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="784.8" x2="784.8" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="818.2" x2="818.2" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="851.6" x2="851.6" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="885" x2="885" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="918.4" x2="918.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="951.799999999999" x2="951.799999999999" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="985.199999999999" x2="985.199999999999" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1018.6" x2="1018.6" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1052" x2="1052" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1085.4" x2="1085.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1118.8" x2="1118.8" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1152.2" x2="1152.2" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1185.6" x2="1185.6" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1219" x2="1219" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1252.4" x2="1252.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1285.8" x2="1285.8" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1319.2" x2="1319.2" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1352.6" x2="1352.6" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1386" x2="1386" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1419.4" x2="1419.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1452.8" x2="1452.8" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1486.2" x2="1486.2" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1519.6" x2="1519.6" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1553" x2="1553" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1586.4" x2="1586.4" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1619.8" x2="1619.8" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1653.2" x2="1653.2" y1="1275" y2="1265" />
+    <line class="scale_minor" style="stroke: black; stroke-linecap: butt; stroke-width: 1" x1="1686.6" x2="1686.6" y1="1275" y2="1265" />
+</svg>
