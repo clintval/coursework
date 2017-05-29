@@ -1,0 +1,261 @@
+---
+title: "Assignment 1"
+author: "Clint Valentine"
+output: pdf_document
+---
+
+Designing Optimal Harvesting Regimes
+------------------------------------
+
+The assumption that the Cod population will grow and replace themselves allows for a harvest or yield of the population to happen continually at a certain rate which will allow for the population to survive. The maximum sustainable yield is a rate of population removal that would keep the Cod population growing at it's maximum intrinsic rate. This value is a theoretical knife-edge rate as an increase in yield over time would likely lead to population extinction. To begin simulating this behavior we will begin with the continuous logisitic equation for \textit{per} population growth. The model for \textit{per} capita growth rate follows and should give the probability of growth.
+
+
+\begin{center}1.1\hfill$\frac{dN}{dt} = rN\frac{K-N}{K}-H$\hfill\phantom{.}\end{center}
+\begin{center}DIMENSIONAL ANALYSIS\end{center}
+\begin{center}$\frac{dN (\# of fish)}{dt (time)} = r (\frac{1}{time})N (\# of fish)\frac{K (\# of fish) -N (\# of fish)}{K (\# of fish)}-H \frac{(\# of fish)}{(time)}$\end{center}
+
+\begin{center}1.2\hfill$\frac{1}{N_{t}} \frac{dN}{dt} = r \frac{K-N}{K}-\frac{H}{N_{t}}$\hfill\phantom{.}\end{center}
+\begin{center}DIMENSIONAL ANALYSIS\end{center}
+\begin{center}$\frac{1}{N_{t}(\# of fish)} \frac{dN (\# of fish)}{dt (time)} = r (\frac{1}{time})N (\# of fish)\frac{K (\# of fish) -N (\# of fish)}{K (\# of fish)}- \frac{H (\# of fish)}{N_{t} (time)(\# of fish)}$\end{center}
+
+
+$\frac{dN}{dt}$ is the continuous logisitic \textit{per} population growth rate, $r$ is the intrinsic rate of increase, and $K$ is the carrying capacity of the population. The number of Cod removed from the population, or the harvesting rate, is defined as $H$.
+
+The maximum sustainable yield of a population would be at a rate equal to the highest rate of population growth in order to maintain net equilibrium. The inflection point of the logistic growth curve is always found at $\frac{K}{2}$. Solving for $N=\frac{K}{2}$ lends the equation:
+
+\begin{center}$0=r\frac{K}{2}\frac{K-\frac{K}{2}}{K}-H$\end{center}
+
+\begin{center}1.3\hfill$H=r\frac{K}{4}$\hfill\phantom{.}\end{center}
+
+````{r fig.width=7, fig.height=5}
+N <- seq(0, 100)
+
+solve.lograte <- function(N, r=0.5, K=100, H=0.1) {
+  return((r * N * (K - N) / K) - H)
+}
+
+rates <- solve.lograte(N)
+
+plot(N, rates, xlab='Abundance (N)', ylab='Population Growth Rate (dN/dt)',
+     type='l', col='red', main='Growth Rate as a Function of Abundance', xaxt='n')
+
+abline(v=N[which.max(rates)], lty=2, col='blue')
+
+axis(1, at=seq(0, 100, by=10), las=2)
+```
+
+The above code executes the per population rate of increase for the one hundred integer values of population abundance between 0 and 100. The carrying capacity $K$ was set to 100, the intrinsic rate of increase was set to $0.5$, and finally, the rate of harvesting was set to $0.1$. Using these values we analytically estimated our highest population growth rate of Cod to be one half the carrying capacity at 50 $(fish)$. The blue dashed line on the above plot marks the highest rate of population growth at an abundance value of exactly 50 $(fish)$. The solution between the two lines is at a rate of exactly 12.50 $\frac{fish}{time}$ as can be verified using the equation 1.3. This rate is the maximum sustainable yield for this population of fish. To simulate this we will solve the solution using the `ode45` method in `R` for reusable code, however the solution should appear as the following:
+
+\begin{center}1.4\hfill$N(t)=\frac{KN_{o}e^{rt}}{K+N_{o}(e^{rt}-1)}-H$\hfill\phantom{.}\end{center}
+
+The initial population size was set to the steady-state value $K = N_{o} = 100$. The intrinsic rate of increase was set to one half and the harvesting rate was set to $12.50\frac{fish}{time}$. This simulation was run for 100 individual timesteps starting at $t = 0$. 
+
+````{r fig.width=7, fig.height=5}
+library(deSolve)
+
+solve.pop.logistic <- function(t, y, parms) {
+dY <- parms$r * y * (1 - (y / parms$K)) - parms$H
+return(list(dY))
+}
+
+parms <- list(r=0.5, K=100, H=12.5)
+
+No <- parms$K
+
+abundance.safe <- ode(y=No, times=seq(from=0, to=100, len=100),
+                      func=solve.pop.logistic, parms, method='ode45')
+
+parms$H <- 12.9
+
+abundance.bad <- ode(y=No, times=seq(from=0, to=100, len=100),
+                     func=solve.pop.logistic, parms, method='ode45')
+
+plot(abundance.bad[,1], abundance.bad[,2], type='l', lty=1, ylab='Abundance (N)',
+     xlab='Time', main='Abundance vs. Time', col='blue', ylim=c(0,150))
+
+lines(abundance.safe[,1], abundance.safe[,2], col='red')
+
+
+
+abline(h=50, lty=2, col='black')
+
+legend(x='topleft', legend=c('Simulation with H=12.5 (fish/time)',
+                             'Simulation with H=12.9 (fish/time)',
+                             'Population Size at Max Growth Rate'),
+       lty=c(1, 1, 2), lwd=c(2.5,2.5), col=c('red','blue', 'black'))
+```
+
+The behavior of this simulation shows an asymptotic line starting at $No = 100$ and decreasing logarithmically to a value of 50 fish. This confirms that the population is stable when the harvesting rate is at exactly $12.5\frac{fish}{time}$. To show how precarious this situation is, a blue line is plotted with a harvesting rate of $12.9\frac{fish}{time}$.
+
+
+We can run the same analysis on the \textit{per} capita growth rate model. We would expect to see the intrinsic rate of increase $r$ as the \textit{per} capita rate of increase.
+
+````{r fig.width=7, fig.height=5}
+r <- 0.5
+N <- seq(0,100)
+K <- 100
+H <- 0.1
+
+solve.lograte <- function(N, r, K, H) {
+  return((r * (K - N) / K) - H / N)
+}
+
+rates <- solve.lograte(N, r, K, H)
+
+print(rates[which.max(rates)]) # Solved using simulation
+print(r) # Solved using math
+
+plot(N, rates, xlab='Abundance (N)', ylab='Per Capita Growth Rate (dN/dt)*(1/Nt)',
+     type='l', col='red', main='Per Capita Growth Rate as a Function of Abundance',
+     xaxt='n')
+
+abline(v=N[which.max(rates)], lty=2, col='blue')
+
+axis(1, at=seq(0, 100, by=10), las=2)
+```
+
+The difference between the two $r$ values is due to a divide by zero error as the per capita rate of increase should be, in theory, greatest when abundance is at an absolute minimum.
+
+The maximum sustainable yield for the \textit{per} capita model is calculated by setting the rate of \textit{per} capita increase to zero. For $k=100$, $r=0.5$, and $N_{o}=K$, maximum \textit{per} capita harvesting rate is $
+
+\begin{center}1.5\hfill$\frac{dN}{dt}\frac{1}{N_{t}}=0=r\frac{K-N}{K}-\frac{H}{N_{t}}$\hfill\phantom{.}\end{center}
+
+\begin{center}$r\frac{K-N}{K}=\frac{H}{N_{t}}$\end{center}
+
+\begin{center}$H=rN_{t}\frac{K-N}{K}$\end{center}
+
+````{r fig.width=7, fig.height=5}
+library(deSolve)
+
+solve.capita.logistic <- function(t, y, parms) {
+dY <- parms$r * (1 - (y / parms$K)) - parms$H
+return(list(dY))
+}
+
+parms <- list(r=0.5, K=100, H=0.5)
+
+No <- parms$K
+
+abundance <- ode(y=No, times=seq(from=0, to=100, len=100),
+                      func=solve.capita.logistic, parms, method='ode45')
+
+plot(abundance[,1], abundance[,2], type='l', lty=1, ylab='Abundance (N)',
+     xlab='Time', main='Abundance vs. Time of per Capita Harvesting Model', col='red', ylim=c(0,150))
+
+abline(h=50, lty=2, col='black')
+
+legend(x='topleft', legend='H = 0.5', lty=1, col='red')
+```
+
+The model confirms our hypothesis that a population will remain stable with the \textit{per} capita harvesting rate equaling the overall \textit{per} capita rate of increase. At this point, the population will approach $\frac{K}{2}$ as the plot shows.
+
+Dealing with Environmental Stochasticity
+-----------------------------------------
+
+To simulate environmental stochasticity in Cod population we must use the developed discrete-time logistic map equation where $R = \textit{e}^{r} - 1$.
+
+\begin{center}1.5\hfill$N_{t+1} = N_{t}(1 + R(1 - \frac{N_{t}}{K}))-H$\hfill\phantom{.}\end{center}
+
+The population size at the maximum growth rate of the logistic map simulation above can be found at $N = \frac{K}{2}$ as verified by the below simulation for $K = 100$ with $R = \textit{e}^{0.5} - 1$. The highest population growth rate is indeed found at $N = 50$ at a value of $16.21803 \frac{fish}{time}$.
+
+The following equation 1.7 and code attempts to find the maximum per population growth rate equation using the logistic-map. These results are congruent with our mathmatical explanation as shown directly below:
+
+\begin{center}1.7\hfill$\Delta N_{max} = N_{t+1}-N_{t} = R(N_{t} - \frac{N_{t}}{K}))$\hfill\phantom{.}\end{center}
+
+\begin{center}where $N_{t} = \frac{K}{2}$\end{center}
+
+\begin{center}$\Delta N_{max} = R\frac{K}{4}$\end{center}
+
+\begin{center}$\Delta N_{max} = 16.218 = (\textit{e}^{0.5}-1)\frac{100}{4}$\end{center}
+
+
+````{r fig.width=7, fig.height=5}
+per.pop.rate <- function (Nt, r=0.5, K=100) {
+  return((exp(r) - 1) * (Nt - (Nt * Nt) / K))
+}
+
+abundance <- seq(100)
+delta <- per.pop.rate(abundance)
+
+print(max(delta)) # From simulation
+print((exp(0.5) - 1) * 100 / 4) # From Math
+```
+
+
+The following code simulates the logistic-map equation for three different harvesting regimes (MSY, 0.95% MSY, and 0.90% MSY) and random environmental stochasticity.
+
+````{r fig.width=7, fig.height=5}
+R <- 0.5
+K.mean <- 10
+
+time.steps <- 100
+num.simulations <- 1000
+
+H <- (R * K.mean / 4)
+
+RUNS <- c(MSY.90 = 0.90 * H, MSY.95 = 0.95 * H, MSY = H)
+
+solve.logmap <- function(Nt, R, K, H=0) {
+  N <- Nt * (1 + R * (1 - Nt/K)) - H
+  return(N)
+}
+
+deviations <- seq(from=0.1, to=2.0, by=((2 - 0.1) / 100))
+
+num.rows <- length(RUNS) * num.simulations
+results <- data.frame(run=character(), sd=numeric(), extinction.P=numeric(),
+                      persistance.P=numeric(), stringsAsFactors=FALSE)
+
+counter <- 1
+
+for (name in names(RUNS)) {
+  for (sd in deviations) {
+    extinction.P <- 0
+    for (x in seq(num.simulations)) {
+      K.vector <- rnorm(n=100, mean=K.mean, sd=sd)
+  
+      abundance <- numeric(length=length(K.vector))
+      abundance[1] <- K.vector[1]
+  
+      for (t in 2:time.steps) {
+        N <- solve.logmap(abundance[t-1], R, K.vector[t], RUNS[[name]])
+        if (N <= 0){
+          extinction.P <- extinction.P + (1 / num.simulations)
+          break
+        } else {
+        abundance[t] <- N
+        }
+      }
+    }
+  
+  persistance.P <- 1 - extinction.P
+
+  if (persistance.P < .Machine$double.eps) {
+    persistance.P = 0
+  }
+  
+  results[counter,] <- c(name, sd, extinction.P, persistance.P)
+  counter <- counter + 1
+  }
+}
+
+```
+````{r fig.width=7, fig.height=5}
+MSY.90.results <- results[results$run == 'MSY.90', ]$persistance.P
+MSY.95.results <- results[results$run == 'MSY.95', ]$persistance.P
+MSY.results <- results[results$run == 'MSY', ]$persistance.P
+
+full.results <- cbind(MSY.90.results, MSY.95.results, MSY.results)
+
+matplot(deviations, full.results, t="l", lty=1, col=c('blue', 'red', 'black'),
+        xlab='Variability of the Carrying Capacity K',
+        ylab='Mean Probability of Persistance',
+        main='Effects of Harvesting Rates with Environmental Stochasticity')
+
+legend(x='bottomleft', legend=c('90% of MSY', '95% of MSY', 'MSY'),
+       lty=c(1, 1, 1), lwd=c(2.5,2.5), col=c('blue','red', 'black'))
+```
+
+These results indicate that the highest rate of harvesting a population can sustain leaves little room for environmental variables that may affect the model. A lesser harvesting regime can still have drastic implications on the Cod population as shown in the plot above. Even a value at 90% MSY shows a steady decrease in persistance of the population during variability in the environment (modeled as variability in the carrying capacity). The safest harvesting rate choice to preserve the Cod population would be the 90% MSY value because it shows better resiliency.
+
+These results were simulated over the course of 100 timesteps so even small values of environmental stochasticity at the MSY value may not have doomed the Cod population. To validate our original hypothesis we would have to examine longer time intervals.

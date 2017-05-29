@@ -1,0 +1,93 @@
+---
+title: "Lab 5"
+author: "Clint Valentine"
+output: pdf_document
+---
+
+Spatial Models
+--------------
+
+
+
+
+````{r fig.width=7, fig.height=5, warning=F, message=F}
+find.neighbors.periodic <- function(npops) {
+  neighs <- matrix(nrow=npops, ncol=2, dimnames=list(NULL, c('left', 'right')))
+  
+  neighs[1, ] <- c(npops, 2)
+  neighs[npops, ] <- c(npops - 1, 1)
+  
+  for (loc in 2:(npops - 1)) {
+    neighs[loc, ] <- c(loc - 1, loc + 1)
+  }
+  return(neighs)
+}
+
+find.neighbors.reflective <- function(npops) {
+  neighs <- matrix(nrow=npops, ncol=2, dimnames=list(NULL, c('left', 'right')))
+  
+  neighs[1, ] <- c(1, 2)
+  neighs[npops, ] <- c(npops - 1, npops)
+  
+  for (loc in 2:(npops - 1)) {
+    neighs[loc, ] <- c(loc - 1, loc + 1)
+  }
+  return(neighs)
+}
+
+find.neighbors.absorbing <- function(npops) {
+  neighs <- matrix(nrow=npops, ncol=2, dimnames=list(NULL, c('left', 'right')))
+  
+  neighs[1, ] <- c(0, 2)
+  neighs[npops, ] <- c(npops - 1, 0)
+  
+  for (loc in 2:(npops - 1)) {
+    neighs[loc, ] <- c(loc - 1, loc + 1)
+  }
+  return(neighs)
+}
+```
+
+````{r fig.width=7, fig.height=6, warning=F, message=F}
+library('deSolve')
+library('fields')
+source('http://faraway.neu.edu/data/cb.R')
+set.seed(42)
+
+npops = 4
+d = 0.5
+h = 0
+R = runif(1, min=1, max=2)
+K = runif(1, min=0, max=10)
+maxtime = 100
+
+solve.discrete.spatial = function (x, maxtime=100, neighs) {
+  N = matrix(nrow=maxtime, ncol=x)
+  N[1, ] = runif(x, 2, 3)
+
+  for (i in 2:maxtime) {
+    E = d * N[i-1,]
+    I = d * 0.5 * rowSums(matrix(N[i-1, neighs[, 1:2]], ncol=2))    
+    N[i,] = N[i-1,] * (1 + R * (1 - (N[i-1,] / K))) - h * N[i-1,] + I - E
+    N[i, N[i,] <= 0] = 0
+  }
+  return(N)
+}
+
+par(mfrow=c(3, 1))
+par(cex=0.6)
+par(mar=c(3, 3, 0, 0), oma=c(1, 2, 1, 1))
+
+for (j in 1:3) {
+  matplot(1:maxtime, solve.discrete.spatial(npops, neighs=find.neighbors.periodic(npops)), xlab='', ylab='', type='l', col=cb, lty=1, ylim=c(0, 13))
+  text(-2, 0, 'Periodic Boundary', adj=0)
+
+  matplot(1:maxtime, solve.discrete.spatial(npops, neighs=find.neighbors.reflective(npops)), xlab='', ylab='', type='l', col=cb, lty=1, ylim=c(0, 13))
+  text(-2, 0, 'Reflective Boundary', adj=0)
+  
+  matplot(1:maxtime, solve.discrete.spatial(npops, neighs=find.neighbors.absorbing(npops)), xlab='', ylab='', type='l', col=cb, lty=1, ylim=c(0, 13))
+  text(-2, 0, 'Absorbing Boundary', adj=0)
+}
+
+
+```

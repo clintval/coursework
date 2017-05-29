@@ -1,0 +1,120 @@
+---
+title: "Final"
+author: "Clint Valentine"
+output: pdf_document
+---
+
+Spatial Models
+--------------
+````{r fig.width=7, fig.height=6, warning=F, message=F}
+library('deSolve')
+library('fields')
+source('http://faraway.neu.edu/data/cb.R')
+
+set.seed(2)
+npops = 8
+maxtime = 2000
+
+N.R = runif(1, min=0, max=0.1)  # Crop recovery rate
+N.K = runif(1, min=10, max=20)  # Crop max infections
+
+P.K = 90   # Spore carrying capacity
+
+N.init = runif(npops, min=0, max=N.K)
+P.init = 90
+
+
+
+solve.spatial.plain = function (x, maxtime, alpha) {
+  P = numeric(maxtime)
+  P[1] = P.init
+
+  N = matrix(nrow=maxtime, ncol=x)
+  N[1, ] = N.init
+
+  beta = max(alpha)  # 
+  gamma = 0.0000001 # Spore rate of growth
+  
+  for (i in 2:maxtime) {
+    P[i] = P[i-1] + P[i-1] * gamma * sum(N[i-1,]) * (1 - (((P[i-1] + (beta * P[i-1] / npops)) / P.K)))
+
+    P[P[i] <= 0 | is.nan(P[i])] = 0
+
+    N[i,] = N[i-1,] + N[i-1,] * (- N.R) * (1 - (N[i-1,] / N.K)) + alpha * P[i-1] * (1 - (N[i-1,] / N.K))
+
+
+  }
+  return(list(N=N, P=P))
+}
+
+results.plain = solve.spatial.plain(npops, maxtime, c(runif(npops - 1, min=0.0014, max=0.0015), 0.0015))
+results.mixed = solve.spatial.plain(npops, maxtime, c(runif(npops - 1, min=0.0005, max=0.0015), 0.0015))
+
+print(max(tail(results.mixed$N, 1)[1,])/max(tail(results.plain$N, 1)[1,]))
+
+
+
+par(mfrow=c(2, 2))
+par(cex=0.6)
+par(mar=c(3, 3, 3, 3), oma=c(1, 1, 1, 1))
+
+
+plot(1:maxtime, results.plain$P, xlab='', ylab='', type='l', col=cb, lty=1, main='Spore Pool')
+matplot(1:maxtime, results.plain$N/N.K, xlab='', ylab='', type='l', col=cb, lty=1, main='Plain')
+plot(1:maxtime, results.mixed$P, xlab='Time', ylab='', type='l', col=cb, lty=1, main='Spore Pool')
+matplot(1:maxtime, results.mixed$N/N.K, xlab='Time', ylab='', type='l', col=cb, lty=1, main='Diverse')
+
+
+```
+````{r fig.width=7, fig.height=6, warning=F, message=F}
+a = 0
+for (i in 1:5) {
+  results.plain = solve.spatial.plain(npops, maxtime, c(runif(npops - 1, min=0.0014, max=0.0015), 0.0015))
+  results.mixed = solve.spatial.plain(npops, maxtime, c(runif(npops - 1, min=0.0005, max=0.0015), 0.0015))
+  a = a + max(tail(results.mixed$N, 1)[1,])/max(tail(results.plain$N, 1)[1,])
+}
+print(a/5)
+```
+
+
+
+````{r fig.width=7, fig.height=6, warning=F, message=F}
+par(mfrow = c(2, 1))
+
+par(mar=c(rep(2, 4)), oma=c(1, 2, 1, 1))
+image.plot(1:maxtime, 1:npops, solve.spatial.plain(npops, neighs=find.neighbors.periodic(npops)), xlab = "Time", ylab = "Site", main = "Non-Diverse")
+image.plot(1:maxtime, 1:npops, solve.spatial.resistive(npops, neighs=find.neighbors.periodic(npops)), xlab = "Time", ylab = "Site", main = "Resistive")
+
+
+
+
+solve.spatial.resistive = function (x, maxtime, neighs) {
+  N = matrix(nrow=maxtime, ncol=x)
+  N[1, ] = initials
+
+  for (i in 2:maxtime) {
+    E = d.good * N[i-1,] # Make all emmigration the good conversion rate
+    E[1:(length(E)/2)*2] = d.bad * N[i-1, 1:(length(N[i-1,])/2)*2] # Make every half a bad converter
+
+    I = d.in * 0.5 * rowSums(matrix(N[i-1, neighs[, 1:2]], ncol=2)) 
+    N[i,] = N[i-1,] * (1 + R * (1 - (N[i-1,] / K))) * N[i-1,] + I - E
+    N[i, N[i,] <= 0] = 0
+  }
+  return(N)
+}
+
+solve.spatial.original = function (x, maxtime) {
+  N = matrix(nrow=maxtime, ncol=x)
+  N[1, ] = initials
+
+  for (i in 2:maxtime) {
+    E = d.good * N[i-1,]
+    I = d.in * 0.5 * rowSums(matrix(N[i-1, neighs[, 1:2]], ncol=2))    
+    N[i,] = N[i-1,] * (1 + N.R * (1 - (N[i-1,] / K))) * N[i-1,] + I - E
+    N[i, N[i,] <= 0] = 0
+  }
+  return(P)
+}
+
+
+```

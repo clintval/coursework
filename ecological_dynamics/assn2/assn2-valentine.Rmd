@@ -1,0 +1,270 @@
+---
+title: "Assignment 2"
+author: "Clint Valentine"
+output: pdf_document
+---
+
+Effective Biocontrol Agents
+---------------------------
+
+We will simulate the dynamics of the Rosenzweig-MacArthur predator-prey dynamics to illustrate the effectiveness of each predator type as a biocontrol for an invasive pest species. We first simulate the species for continuous logisitc growth to confirm the equilibrium abundance of the invasive pest species. We then set up a system of coupled differential equations for each scenario and solve them using the `ode` solver in `R`.
+
+To measure the impact each predator has on species abundance we average the abundances of the prey during the last 500 timesteps of a 3,000 timestep simulation. We then take the log average of these values for varying predator handling time and plot the results.
+
+\begin{center}
+\textbf{No Predator}
+
+$$\frac{dN}{dt} = rN(1-\frac{N}{K})$$
+
+\textbf{Type I}
+
+$$\frac{dN}{dt} = rN(1-\frac{N}{K})-aNP$$
+
+$$\frac{dP}{dt} = abNP-mP$$
+
+\textbf{Type II}
+
+$$\frac{dN}{dt} = rN(1-\frac{N}{K})-\frac{aNP}{1+ahN}$$
+
+$$\frac{dP}{dt} = \frac{abNP}{1+ahN}-mP$$
+
+\textbf{Type III}
+
+$$\frac{dN}{dt} = rN(1-\frac{N}{K})-\frac{aN^{2}P}{1+ahN^{2}}$$
+
+$$\frac{dP}{dt} = \frac{abN^{2}P}{1+ahN^{2}}-mP$$
+\end{center}
+
+````{r fig.width=7, fig.height=5, warning=F, message=F}
+source('http://faraway.neu.edu/data/cb.R')
+library('deSolve')
+
+time = 1:3000
+handling = seq(0, 1, length=20)
+
+solve.logistic = function(t, y, parms) {
+  return(list(parms$rPrey * y[1] * (1 - (y[1] / parms$KPrey))))
+}
+
+solve.pred.preyI = function(t, y, parms) {
+  dN <- parms$rPrey * y[1] * (1 - (y[1] / parms$KPrey)) - (parms$a * y[1] * y[2])
+  dP <- (parms$a * parms$b * y[1] * y[2]) - parms$m * y[2]
+  return(list(c(dN, dP)))
+}
+
+solve.pred.preyII = function(t, y, parms) {
+  dN <- parms$rPrey * y[1] * (1 - (y[1] / parms$KPrey)) -
+           (parms$a * y[1] * y[2]) / (1 + parms$a * parms$h * y[1])
+  dP <- (parms$a * parms$b * y[1] * y[2]) /
+        (1 + parms$a * parms$h * y[1]) - parms$m * y[2]
+  return(list(c(dN, dP)))
+}
+
+solve.pred.preyIII = function(t, y, parms) {
+  dN <- parms$rPrey * y[1] * (1 - (y[1] / parms$KPrey)) -
+           (parms$a * (y[1] ** 2) * y[2]) / (1 + parms$a * parms$h * (y[1] ** 2))
+  dP <- (parms$a * parms$b * (y[1] ** 2) * y[2]) /
+               (1 + parms$a * parms$h * y[1]) - parms$m * y[2]
+  return(list(c(dN, dP)))
+}
+
+compute.log.response = function(prey, KPrey) {
+   return(log(mean(prey/KPrey)))
+}
+
+response.ratio = matrix(nrow=length(handling), ncol=3,
+                        dimnames=list(NULL, c('I', 'II', 'III')))
+
+for (i in 1:length(handling)) {
+  parms = list(rPrey=3, KPrey=10, a=2, b=1, m=1.5, h=handling[i])
+
+  #N.equil = parms$m / (parms$a * (parms$b - parms$h * parms$m))
+
+  #P.equil = (parms$rPrey / (parms$a * parms$KPrey)) *
+  #          (parms$KPrey + N.equil * (parms$a * parms$h * parms$KPrey - 1) -
+  #          parms$a * parms$h * (N.equil ** 2))
+  
+  N = c(0.1, 0.1)
+
+  without.predator = ode(y=N[1], times=time, func=solve.logistic, parms, method='ode45')
+  with.predatorI = ode(y=N, times=time, func=solve.pred.preyI, parms, method='ode45')
+  with.predatorII = ode(y=N, times=time, func=solve.pred.preyII, parms, method='ode45')
+  with.predatorIII = ode(y=N, times=time, func=solve.pred.preyIII, parms, method='ode45')
+
+  response.ratio[i, 'I'] = compute.log.response(tail(with.predatorI[,2], 500),
+                                                tail(without.predator[,2], 500))
+
+  response.ratio[i, 'II'] = compute.log.response(tail(with.predatorII[,2], 500),
+                                                 tail(without.predator[,2], 500))
+
+  response.ratio[i, 'III'] = compute.log.response(tail(with.predatorIII[,2], 500),
+                                                  tail(without.predator[,2], 500))
+}
+```
+
+The plot below shows an expected result. A type I predator, as described by the Lokta-Volterra model, is not described with a function that considers handling time. Instead, this predator should have a constant relationship with it's affect on prey abundance.
+
+A type II predator incorporates handling time and begins, at low handling time, like the type I predator. As handling time increases the predator becomes very innefficient at affecting the prey negatively. As handling time increases to a higher amount the predator looses all efficiency and has very little to no negative effect on the prey.
+
+The type III predator is slightly less effective than the type I predator at near zero handling time. The type III predator maintains a negative impact on the prey throughout all ranges of handling time but performs worse than the type I predator as handling time increases.
+
+The type I predator appears to have the most stable and impactful negative effect on the prey over the entire range of handling times. The second most able predator is the type III predator which performs slightly worse than that of the type I predator due to the consideration of handling time in the model of the type III predator. Finally, the type II predator performs the worst by far and looses all effectiveness at high handling times.
+
+
+````{r fig.width=7, fig.height=5, warning=F, message=F}
+matplot(handling, response.ratio[,1:3], type='l', lty=1, col=c(cb.green, cb.red, cb.blue),
+        labels=TRUE, tck=0.01, xlab='Handling Time (t)', ylab='Log Response Ratio',
+         main='Log Response Ratio vs. Handling Time for Predator Type')
+ 
+legend('topleft', legend=c('Type I', 'Type II', 'Type III'),
+       col=c(cb.green, cb.red, cb.blue), lty=rep(1, 3))
+```
+
+
+To determine if the addition of any of the three predator types may desetabilize the system we will run an enrichment experiment for predatory-prey systems with carrying capacities \textit{K} ranging from 2 to 14 in 20 linearly-spaced values.  For each value of \textit{K} we will measure the local min/max of the prey abundance over the last 500 time steps of the simulation and plot the results. We will hold the handling time fo the predator constant at $h=0.5$.
+
+````{r fig.width=7, fig.height=5, warning=F, message=F}
+time = 1:3000
+carry = seq(2, 14, length=40)
+
+solve.forK = function(K, FUN) {
+  N = c(0.1, 0.1)
+  parms = list(rPrey=3, a=2, b=1, m=1.5, h=0.5, KPrey=K)
+
+  a = ode(y=N, times=time, func=FUN, parms, method='ode45')
+  
+  values = numeric()
+  
+  for (x in (length(a) - 500):(length(a) - 1)) {
+    locmin = (a[x] < a[x - 1]) & (a[x] < a[x + 1])
+    locmax = (a[x] > a[x - 1]) & (a[x] > a[x + 1])
+    stability = (a[x] == a[x - 1]) & (a[x] == a[x + 1])
+
+    # Append to found values
+    if (locmin | locmax | stability) {
+      values <- c(values, a[x])
+    }
+  }
+  return(unique(values))
+}
+
+plot(NULL, xlim=c(min(carry), max(carry)), ylim=c(0, 9), tck=0.01,
+     ylab='Local Min. and Max. of Prey Abundance (N)', xlab='Carrying Capcity (K)',
+     main='Stability Analysis of Prey vs. Prey Carrying Capacity')
+
+legend(x='topleft', legend=c('Type I', 'Type II', 'Type III'),
+         pch=16, col=c(cb.green, cb.red, cb.blue))
+
+abline(h=0, lty=2, col=cb.grey)
+
+for (K in carry) {
+  # Plot Type III first since many overlapping points
+  Y = solve.forK(K, solve.pred.preyIII)
+  X = rep(K, length.out=length(Y))
+  points(X, Y, pch=16, cex=0.5, col=cb.blue)
+  
+  Y = solve.forK(K, solve.pred.preyI)
+  X = rep(K, length.out=length(Y))
+  points(X, Y, pch=16, cex=0.5, col=cb.green)
+
+  Y = solve.forK(K, solve.pred.preyII)
+  X = rep(K, length.out=length(Y))
+  points(X, Y, pch=16, cex=0.5, col=cb.red)
+} 
+  
+```
+
+This analysis shows that only a type I predator is able to maintain a stable predator-prey system as shown by the linear shape of the points on the above plot. This predator is thus least useful as a biocontrol in a predator-prey relationships as the prey will always be able to maintain a stable existance. We also see that both the type II and type III predators destabilize the abundance of prey. This destablizing effect increases with the carrying capacity of the prey.
+
+These simulations show that even though a type II predator effects the average abundance of the prey population little, the destabilizing effect can be great enough to bring the total population abundance to near zero. We therefore rerank the predators effectiveness as a biocontrol from best to least: type II, type III, and type I.
+
+Note: In this simulation we also plotted stability points to give a more complete showing of behaviour of these three models. We also increased the resolution of \textit{K} to show more data because it looked cooler.
+
+\newpage
+
+Intraguild Predation
+--------------------
+
+Assumptions of Intraguild Predation (IGP) between two species and one resource:
+\begin{enumerate}
+  \item Species $N_{1}$ and $N_{2}$ engage in explicit exploitative competition for resource $R$
+  \item $N_{2}$ consumes $N_{1}$
+  \item $N_{1}$ consumes resource $R$ according to the function $f_{1}(R)$
+  \item $N_{2}$ consumes resource $R$ according to the function $f_{2}(R)$
+  \item $N_{1}$ is consumed by $N_{2}$ according to the function $y(N_{1})$
+  \item $N_{2}$ consumes $N_{1}$ according to the function $g(y(N_{1}))$
+\end{enumerate}
+
+
+\begin{center}
+\textbf{Implicit System of Equations}
+
+$$\frac{dN_{1}}{dt} = N_{1}[f_{1}(R)-N_{2}y(N_{1})]$$
+
+$$\frac{dN_{2}}{dt} = N_{2}[f_{2}(R)+g(y(N_{1}))]$$
+
+\textbf{At Equilibrium}
+
+$$\hat{N_{1}} > 0\ \text{and}\ \hat{N_{2}} > 0\ \text{and}\ \hat{R}_{i} > 0$$
+
+$$\frac{dN_{1}}{dt} = \hat{N}_{1}[f_{1}(R)-y(\hat{N}_{1})N_{2}] = 0 $$
+
+$$f_{1}(R) = y(\hat{N}_{1})N_{2} > 0$$
+
+$$\frac{dN_{2}}{dt} = \hat{N}_{2}[f_{2}(R)+g(y(N_{1}))] = 0 $$
+
+$$f_{2}(R) = -g(y(N_{1})) < 0$$
+
+$$f_{2}(R) = -g(y(N_{1})) < 0 < f_{1}(R) = y(\hat{N}_{1})N_{2}$$
+
+\newpage
+
+\textbf{At Coexistence with IGP}
+
+$$f_{2}(R) < f_{1}(R)$$
+
+\textbf{At Coexistence without IGP}
+
+$$f_{1}(R) = f_{2}(R)$$
+
+\end{center}
+
+IGP is likely to increase coexistence because of the range of parameters and variability that the expression $f_{2}(R) < f_{1}(2)$ can maintain. This is in stark contrast to the specific equality of $f_{2}(R) = f_{1}(2)$ without intraguild predation.In other words, the model without IGP needs to be numerically equivalent for coexistence to exist whereas the the model with IGP can sustain a variety of functional responses as long as $f_{2}(R) < f_{1}(2)$.
+
+\begin{center}
+\textbf{Explicit System of Equations}
+
+$$\frac{dN_{1}}{dt} = N_{1}[a_{1}R-m_{1}-bN_{2}]$$
+
+$$\frac{dN_{2}}{dt} = N_{2}[a_{2}R-m_{2}+cbN_{1}]$$
+
+$$\frac{dR}{dt} = R[(r-\delta{})-\frac{a_{1}}{Y_{1}}N_{1}-\frac{a_{2}}{Y_{2}}N_{2}]$$
+
+\newpage
+
+\textbf{At Equilibrium}
+
+$$\hat{N_{1}} > 0\ \text{and}\ \hat{N_{2}} > 0\ \text{and}\ \hat{R} > 0$$
+
+$$\frac{dN_{1}}{dt} = \hat{N}_{1}[a_{1}R^{*}_{1}-m_{1}-bN_{2}] = 0$$
+
+$$a_{1}R^{*}_{1} - m_{1} = bN_{2} > 0$$
+
+$$\frac{dN_{2}}{dt} = \hat{N}_{2}[a_{2}R^{*}_{2}-m_{2}+cbN_{1}] = 0$$
+
+$$a_{2}R^{*}_{2} - m_{1} = -cbN_{1} < 0$$
+
+$$a_{2}R^{*}_{2} - m_{1} = -cbN_{1} < 0 < a_{1}R^{*}_{1} - m_{1} = bN_{2}$$
+
+\textbf{At Coexistence with IGP}
+
+$$a_{2}R^{*}_{2} - m_{1} < a_{1}R^{*}_{1} - m_{1}$$
+
+\textbf{At Coexistence without IGP}
+
+$$R^{*}_{1} = R^{*}_{2}$$
+
+$$\frac{m_{1}}{a_{1}} = \frac{m_{2}}{a_{2}}$$
+\end{center}
+
+The hypothesis as stated above is still supported even with explicit equations. Coexistence appears to have a wider parameter space in the IGP model than the single equality that $R^{*}_{1} = R^{*}_{2}$ in the without IGP model.

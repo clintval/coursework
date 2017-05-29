@@ -1,0 +1,134 @@
+---
+title: "Lab 4"
+author: "Clint Valentine"
+output: pdf_document
+---
+
+Designing Optimal Harvesting Regimes
+------------------------------------
+
+First we will use a function to remove disconnected nodes from the food webs downloaded at the below locations.
+
+````{r fig.width=7, fig.height=5}
+# Rows are consumed by columns
+library(igraph)
+library(fmsb)
+source("http://faraway.neu.edu/data/cb.R")
+rm.solo <- function (adj.matrix) {
+  adj.matrix <- as.matrix(adj.matrix)
+  loc <- which(rowSums(adj.matrix) == 0  & colSums(adj.matrix) == 0)
+  adj.matrix <- adj.matrix[-loc, -loc]
+  return(adj.matrix)
+}
+
+host <- 'http://faraway.neu.edu/data/foodwebs/'
+
+benguela <- rm.solo(read.table(paste(host, 'benguela.txt', sep='')))
+britishgrasslands <- rm.solo(read.table(paste(host, 'british-grasslands.txt', sep='')))
+cantoncreek <- rm.solo(read.table(paste(host, 'canton-creek.txt', sep='')))
+chesapeakebay <- rm.solo(read.table(paste(host, 'chesapeake-bay.txt', sep='')))
+coachella <- rm.solo(read.table(paste(host, 'coachella.txt', sep='')))
+scotchbroom <- rm.solo(read.table(paste(host, 'scotch-broom.txt', sep='')))
+skipwithpond <- rm.solo(read.table(paste(host, 'skipwith-pond.txt', sep='')))
+stmarks <- rm.solo(read.table(paste(host, 'st-marks.txt', sep='')))
+stonystream <- rm.solo(read.table(paste(host, 'stony-stream.txt', sep='')))
+
+webs <- list('Benguela'=benguela, 'British Grasslands'=britishgrasslands,
+             'Canton Creek'=cantoncreek, 'Chesapeakebay'=chesapeakebay,
+             'Coachella'=coachella,'Scotchbroom'=scotchbroom,
+             'Skipwith Pond'=skipwithpond, 'St. Marks'=stmarks,
+             'Stony Stream'=stonystream)
+
+
+adj.stats <- function (adj.matrix){
+  if (ncol(adj.matrix) == nrow(adj.matrix)) {
+    S <- nrow(adj.matrix)
+  } else {
+    return('Matrix not Square')
+  }
+  
+  L <- sum(adj.matrix == 1)
+  C <- L/(S*S)
+  
+  avg.degree <- mean(degree(graph.adjacency(adj.matrix)))
+  l.G <- average.path.length(graph.adjacency(adj.matrix))
+  
+  basal <- length(which(rowSums(adj.matrix) == 0))/S
+  intermediate <- length(which(rowSums(adj.matrix) != 0 &
+                                 colSums(adj.matrix) != 0))/S
+  top <- length(which(colSums(adj.matrix) == 0))/S
+
+  return(list(S=S, L=L, C=C, avg.degree=avg.degree, l.G=l.G, basal=basal,
+           intermediate=intermediate, top=top ))
+}
+
+summ.foodwebs <- matrix(nrow=10, ncol=8,
+                        dimnames=list(c(names(webs), 'Mean'),
+                                      c('Species', 'Links', 'C', 'Avg. Deg.', 'Path Length',
+                                        'Basal', 'Int.', 'Top')))
+
+for (x in 1:length(webs)) {
+  summ.foodwebs[x,] <- unlist(unname(adj.stats(webs[[x]])))
+}
+
+summ.foodwebs['Mean', ] <- colMeans(summ.foodwebs, na.rm=TRUE)
+
+radarchart(as.data.frame(summ.foodwebs), maxmin=FALSE, plty=1, pcol=cb,
+           title='Radar Plot of Food Webs and Correlative Parameters')
+
+legend(x='topleft', col=1:10, lty=1, legend=names(webs), cex=0.7)
+```
+
+
+````{r fig.width=7, fig.height=6}
+relations <- cor(summ.foodwebs[1:9,])
+
+par(mfrow=c(3, 3), mar=c(1.1, 1, 4, 2), oma=c(5, 5, 5 ,0))
+for (i in 1:length(webs)) {
+  x <- degree.distribution(graph.adjacency(webs[[i]]))
+  barplot(x, main=names(webs[i]), names.arg=0:(length(x)-1), yaxt='n')
+  axis(2, las=2, line=-0.5)
+}
+
+mtext('Degree of Species Distribution', side=1, outer=1, line=2, font=2)
+mtext('Frequency', side=2, outer=1, line=2.4, font=2) 
+mtext('Analysis of Empirical Food Webs', outer=1, line=2, cex=1.5)
+```
+
+
+Comparing empirical and model food webs
+---------------------------------------
+
+````{r fig.width=7, fig.height=5}
+r.resultssource('http://faraway.neu.edu/data/foodweb.models.R')
+
+nreps <- 1:1000
+
+metrics <- list('Species', 'Links', 'C', 'Avg. Deg.', 'Path Length', 'Basal', 'Int.', 'Top')
+
+r <- matrix(nrow=length(nreps), ncol=8, dimnames=list(NULL, metrics))
+n <- matrix(nrow=length(nreps), ncol=8, dimnames=list(NULL, metrics))
+c <- matrix(nrow=length(nreps), ncol=8, dimnames=list(NULL, metrics))
+
+r.results <- matrix(nrow=length(webs), ncol=8, dimnames=list(names(webs), metrics))
+n.results <- matrix(nrow=length(webs), ncol=8, dimnames=list(names(webs), metrics))
+c.results <- matrix(nrow=length(webs), ncol=8, dimnames=list(names(webs), metrics))
+
+for (name in names(webs)) {
+  for (i in nreps) {
+    report <- adj.stats(webs[[name]])
+    r[i,] <- unlist(adj.stats(random(S=report$S, C=report$C)))
+    n[i,] <- unlist(adj.stats(niche(S=report$S, C=report$C)))
+    c[i,] <- unlist(adj.stats(cascade(S=report$S, C=report$C)))
+  }
+  r.results[name,] <- colMeans(r, na.rm=TRUE)
+  n.results[name,] <- colMeans(n, na.rm=TRUE)
+  c.results[name,] <- colMeans(c, na.rm=TRUE)
+}
+
+
+results <- data.frame(rbind(diag(cor(r.results, summ.foodwebs[1:9,])), diag(cor(n.results, summ.foodwebs[1:9,])), diag(cor(c.results, summ.foodwebs[1:9,]))), row.names=c('Random', 'Niche', 'Cascade'))
+
+
+
+```

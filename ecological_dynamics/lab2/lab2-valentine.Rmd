@@ -1,0 +1,119 @@
+---
+title: "Lab 2"
+author: "Clint Valentine"
+output: pdf_document
+---
+
+Modeling the Dynamics of Structured Populations
+-----------------------------------------------
+Eigen analysis on a generic lifetable.
+
+````{r fig.width=7, fig.height=5}
+library(popbio)
+
+life.table <- read.csv(file = 'http://faraway.neu.edu/data/lifetable.csv')
+
+L <- life.table$S / life.table$S[1]
+
+P.survivor <- numeric(length=nrow(life.table))
+P.survivor[1] <- 1.0
+
+for (x in 2:nrow(life.table)) {
+  P.survivor[x] <- L[x] / L[x - 1]
+}
+
+P.fertility <- P.survivor * life.table$b
+
+leslie <- matrix(0, nrow=8, ncol=8)
+leslie[1,] <- P.fertility
+leslie[row(leslie) == col(leslie) + 1] <- P.survivor[2:length(P.survivor)]
+
+ea <- eigen.analysis(leslie)
+
+# Proportional Abundance at equilibrium
+print(ea$stable.stage)
+# Right Eigen Value
+print(ea$lambda1)
+```
+The eigen vector gives us the change in the population vector of the Leslie matrix. The maximum eigen value for this population is 5.496 which tells us the magnitude of the change in the population at equilibrium. This is the growth rate of the population.
+
+To test if our analysis is correct we can simulate 20 time steps of this population based on a randomly generated normal distribution of starting individuals in each age class.The
+
+````{r fig.width=7, fig.height=5}
+set.seed(42)
+
+time <- 20
+
+simulation <- matrix(data=0, nrow=8, ncol=time)
+weighted <- matrix(data=0, nrow=8, ncol=time)
+
+simulation[,1] <- round(runif(8))
+
+for (x in 2:time) {
+  simulation[,x] <- leslie %*% simulation[,x - 1]
+}
+
+for (x in 1:time) {
+  weighted[,x] <- simulation[,x] / sum(simulation[,x])
+}
+
+matplot(t(weighted), type=c('b'), pch=19, cex=0.6, xlab='Time', ylab='Relative Abundance', col=1:8)
+
+# Plot Eigen Analysis stable stage values horizontally
+abline(h=ea$stable.stage, col=1:8, lty=3)
+
+legend('topright', legend=1:8, col=1:8, lty=1, pch=19, cex=0.8)
+
+title(main ='Relative Abundance through Time', col.main='black', font.main=4)
+```
+
+The simulation results match the eigen analysis almost exactly. The population approaches a stable stage less than 5 time points into the simulation.
+
+````{r fig.width=7, fig.height=5}
+plot(x=1:time, y=colSums(simulation), type=c('b'), pch=19, cex=0.6, xlab='Time', ylab='Total Population Size', col='red')
+
+legend('topleft', legend='Population Size', col='red', lty=1, pch=19, cex=0.8)
+
+title(main ='Relative Abundance through Time', col.main='black', font.main=4)
+
+lm.simulation <- lm(log(colSums(simulation)) ~ seq(1, time))
+
+slope <- exp(unname(coef(lm.simulation[1]))[2])
+ea.eigenval <- ea$lambda1
+
+# Relative Error
+print(abs(slope - ea.eigenval) / slope)
+```
+The eigen value of the eigen analysis is 1.4% away from the slope of the exponential regression analysis. The two values match within a significant margin.
+
+````{r fig.width=7, fig.height=5}
+print(ea$elasticities[which.max(ea$elasticities)])
+
+# >> 0.8272
+```
+This analysis suggest that the survivorship from the age class 1 to the age class 2 in this simulated age class system is the most important stage in the life of the population.
+
+````{r fig.width=7, fig.height=5}
+set.seed(42)
+
+# Function to Compute Geometric Mean
+geo_mean = function(x, na.rm=TRUE){
+  exp(sum(log(x[x > 0]), na.rm=na.rm) / length(x))
+}
+
+
+
+rand.dist = rnorm(n=50, mean=5, sd=seq(from=0, to=2, by=(2 / 100)))
+
+
+leslie <- matrix(0, nrow=8, ncol=8)
+leslie[1,] <- P.fertility
+leslie[row(leslie) == col(leslie) + 1] <- P.survivor[2:length(P.survivor)]
+
+for (Fi in rand.dist) {
+  leslie[1, 1] <- Fi
+  ea <- eigen.analysis(leslie)
+  
+}
+
+```
