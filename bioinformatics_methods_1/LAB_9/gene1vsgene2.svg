@@ -1,0 +1,62 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg width="564" height="612" version="1.1"
+xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<rect x="67" y="102" width="485" height="485"
+stroke="black" stroke-width="2.0" fill="none" />
+<path stroke="black" stroke-width="1.5" d=" M 129 587 L 129 593 M 192 587 L 192 593 M 255 587 L 255 593 M 317 587 L 317 593 M 380 587 L 380 593 M 443 587 L 443 593 M 505 587 L 505 593" fill="none" />
+<text x="129" y="609" text-anchor="middle">100</text>
+<text x="192" y="609" text-anchor="middle">200</text>
+<text x="255" y="609" text-anchor="middle">300</text>
+<text x="317" y="609" text-anchor="middle">400</text>
+<text x="380" y="609" text-anchor="middle">500</text>
+<text x="443" y="609" text-anchor="middle">600</text>
+<text x="505" y="609" text-anchor="middle">700</text>
+<text x="309" y="623" text-anchor="middle">gene1 - 773 nt</text>
+<path stroke="black" stroke-width="1.5" d=" M 67 556 L 61 556 M 67 525 L 61 525 M 67 493 L 61 493 M 67 462 L 61 462 M 67 431 L 61 431 M 67 399 L 61 399 M 67 368 L 61 368 M 67 337 L 61 337 M 67 305 L 61 305 M 67 274 L 61 274 M 67 243 L 61 243 M 67 211 L 61 211 M 67 180 L 61 180 M 67 149 L 61 149 M 67 117 L 61 117" fill="none" />
+<text x="57" y="560" text-anchor="end">50</text>
+<text x="57" y="529" text-anchor="end">100</text>
+<text x="57" y="497" text-anchor="end">150</text>
+<text x="57" y="466" text-anchor="end">200</text>
+<text x="57" y="435" text-anchor="end">250</text>
+<text x="57" y="403" text-anchor="end">300</text>
+<text x="57" y="372" text-anchor="end">350</text>
+<text x="57" y="341" text-anchor="end">400</text>
+<text x="57" y="309" text-anchor="end">450</text>
+<text x="57" y="278" text-anchor="end">500</text>
+<text x="57" y="247" text-anchor="end">550</text>
+<text x="57" y="215" text-anchor="end">600</text>
+<text x="57" y="184" text-anchor="end">650</text>
+<text x="57" y="153" text-anchor="end">700</text>
+<text x="57" y="121" text-anchor="end">750</text>
+<g transform="rotate(-90, 142, 142)">
+<text x="0" y="12" text-anchor="middle">gene2</text>
+</g>
+<text x="54" y="660">E(): </text><path stroke-width="1.5" stroke="black" d=" M 96 648 L 156 648" fill="none" />
+<text align="center" x="162" y="652">&lt;0.0001</text>
+<path stroke-width="1.5" stroke="blue" d=" M 96 666 L 156 666" fill="none" />
+<text align="center" x="162" y="670">&lt;0.01</text>
+<path stroke-width="1.5" stroke="brown" d=" M 240 648 L 300 648" fill="none" />
+<text align="center" x="306" y="652">&lt;1</text>
+<path stroke-width="1.5" stroke="green" d=" M 240 666 L 300 666" fill="none" />
+<text align="center" x="306" y="670">&lt;1e+02</text>
+<path stroke-width="1.5" stroke="lightgreen" d=" M 384 657 L 444 657" fill="none" />
+<text align="center" x="450" y="661">&gt;1e+02</text>
+<!-- score: 1688; bits: 358.9; E(): 5e-103 -->
+<path  stroke="black" d=" M 67 586 L 192 462 L 192 336 L 380 149" fill="none" />
+<!-- score: 401; bits: 87.8; E(): 2e-21 -->
+<path  stroke="black" d=" M 489 164 L 551 102" fill="none" />
+<!-- score: 114; bits: 27.3; E(): 0.004 -->
+<path  stroke="blue" d=" M 343 475 L 370 448 L 372 448 L 379 441 L 379 438 L 389 429 L 391 428 L 411 409 L 411 408 L 421 398 L 422 398 L 434 385 L 435 384 L 482 337 L 483 336 L 500 319 L 501 318 L 506 313" fill="none" />
+<!-- score: 535; bits: 116.0; E(): 7e-30 -->
+<path  stroke="black" d=" M 457 474 L 468 463 L 471 462 L 550 383" fill="none" />
+<!-- score: 509; bits: 110.5; E(): 3e-28 -->
+<path  stroke="black" d=" M 505 399 L 570 333 L 572 332 L 576 328" fill="none" />
+<!-- score: 100; bits: 24.4; E(): 0.03 -->
+<path  stroke="brown" d=" M 279 267 L 297 250" fill="none" />
+<!-- score: 99; bits: 24.1; E(): 0.03 -->
+<path  stroke="brown" d=" M 418 433 L 441 410 L 442 409 L 446 404 L 448 404 L 451 400 L 452 396 L 456 392 L 456 390 L 461 386 L 462 385 L 469 378 L 469 376 L 493 352 L 494 352 L 499 347 L 500 345 L 501 343 L 503 342 L 505 341 L 506 340 L 514 332" fill="none" />
+</svg>

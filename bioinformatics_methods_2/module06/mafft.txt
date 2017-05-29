@@ -1,0 +1,57 @@
+
+nseq =  8
+distance =  ktuples
+iterate =  0
+cycle =  2
+sparsepickup = 0
+nguidetree = 2
+nthread = 0
+sueff_global = 0.100000
+done.
+scoremtx = 1
+Gap Penalty = -1.53, +0.00, +0.00
+
+tuplesize = 6, dorp = p
+
+
+Making a distance matrix ..
+
+There are 2 ambiguous characters.
+    1 / 8
+done.
+
+Constructing a UPGMA tree ... 
+    0 / 8
+done.
+
+Progressive alignment 1/2... 
+STEP     1 / 7 fSTEP     2 / 7 fSTEP     3 / 7 fSTEP     4 / 7 fSTEP     5 / 7 fSTEP     6 / 7 fSTEP     7 / 7 f
+done.
+
+Making a distance matrix from msa.. 
+    0 / 8
+done.
+
+Constructing a UPGMA tree ... 
+    0 / 8
+done.
+
+Progressive alignment 2/2... 
+STEP     1 / 7 fSTEP     2 / 7 fSTEP     3 / 7 fSTEP     4 / 7 fSTEP     5 / 7 fSTEP     6 / 7 fSTEP     7 / 7 f
+done.
+
+disttbfast (aa) Version 7.215 alg=A, model=BLOSUM62, 1.53, -0.00, -0.00, noshift, amax=0.0
+0 thread(s)
+
+
+Strategy:
+ FFT-NS-2 (Fast but rough)
+ Progressive method (guide trees were built 2 times.)
+
+If unsure which option to use, try 'mafft --auto input > output'.
+For more information, see 'mafft --help', 'mafft --man' and the mafft page.
+
+The default gap scoring scheme has been changed in version 7.110 (2013 Oct).
+It tends to insert more gaps into gap-rich regions than previous versions.
+To disable this change, add the --leavegappyregion option.
+

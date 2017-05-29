@@ -1,0 +1,80 @@
+    1  ls -a
+    2  mkdir .ssh
+    3  cat id_rsa.pub >> .ssh/authorized_keys
+    4  exit
+    5  chmod 700 .ssh
+    6  restorecon -R -v .ssh/
+    7  exit
+    8  ls -a
+    9  cd .ssh
+   10  ls-a
+   11  ls -a
+   12  cd authorized_keys
+   13  exit
+   14  uname -a
+   15  uname
+   16  uname -a
+   17  touch myFile.txt
+   18  ls -l
+   19  ls -a
+   20  man ls
+   21  man touch
+   22  pwd
+   23  cd ..
+   24  ls
+   25  cd valentinec
+   26  ls -A
+   27  mkdir BIOL6308
+   28  ls -l
+   29  cd BIOL6308
+   30  cd ..
+   31  pwd
+   32  cwd
+   33  pwd
+   34  cd ~
+   35  ls -l
+   36  cd ..
+   37  cd ~
+   38  ls -l
+   39  rm myFile.txt
+   40  ls -l
+   41  df
+   42  du -a
+   43  scp
+   44  cd /home/valentinec/BIOL6308
+   45  cd ..
+   46  pwd
+   47  cd ../../
+   48  ls -l
+   49  ls -L
+   50  cd lost+found
+   51  cd boot
+   52  ls -l
+   53  cd ~
+   54  pwd
+   55  clear
+   56  vim
+   57  ls -l
+   58  cd BIOL6308
+   59  mkdir LAB_1
+   60  vim HelloWorld.sh
+   61  ls -L
+   62  ls -l
+   63  cd LAB_1
+   64  ls -l
+   65  ls
+   66  ls -a
+   67  cd ..
+   68  ls -a
+   69  rm .HelloWorld.sh.swp
+   70  ls -a
+   71  cd LAB_1
+   72  ls -a
+   73  vim HelloWorld.sh
+   74  history > history.txt
+   75  less history.txt
+   76  ls -a
+   77  rm history.txt
+   78  cd LAB_1
+   79  ls -l
+   80  history > history.txt
