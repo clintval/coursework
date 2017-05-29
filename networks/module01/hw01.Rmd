@@ -1,0 +1,242 @@
+---
+title: "hw01"
+author: "Charles Valentine"
+date: "October 7, 2016 6PM"
+header-includes:
+  - \usepackage{xfrac}
+  - \usepackage{mathtools}
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Question #1
+----
+
+Let $\mathbf{A}$ be the $N\times N$ adjacency matrix of an undirected unweighted network, without self-loops, of size $N$.
+
+Let $\mathbf{1}$ be a column vector of $N$ elements all equal to $1$.
+\begin{equation}
+\mathbf{A} =
+\begin{bmatrix}
+x_{ij} & \hdots & x_{i} \\
+\vdots & \ddots & \vdots \\
+x_{Nj} & \hdots & x_{NN}
+\end{bmatrix}
+\mathrm{where} \quad \mathrm{diag}(\mathbf{A}) = [0_{ij}, ..., 0_{NN}]
+\end{equation}
+\begin{equation}
+\mathbf{1} =
+\begin{bmatrix}
+1_{ij} \\
+\vdots \\
+1_{NN}
+\end{bmatrix}
+\end{equation}
+
+a) The vector $\vec{k}$ whose elements are the degrees $k_{i}$ of the nodes $i=1, 2,..., N$ is defined as:
+\begin{equation}
+\vec{k} = \mathbf{1}^{T} \bullet \mathbf{A}
+\end{equation}
+
+b) The total number of $L$ links in the network is defined as:
+\begin{equation}
+L = \frac{\vec{k} \bullet \mathbf{1}}{2}
+\end{equation}
+
+c) The matrix $\mathbf{N}$ whose elements $\mathbf{N}_{ij}$ is equal to the number of common neighbors of nodes $i$ and $j$ is defined as:
+\begin{equation}
+\mathbf{N} = \mathbf{A} \bullet \mathbf{A}
+\end{equation}
+
+d) The number of triangles $T$ in the network is defined as:
+\begin{equation}
+T = \frac{\mathrm{trace}(\mathbf{A}^{3})}{6}
+\end{equation}
+
+e) If we square our adjacency matrix $\mathbf{A}$ $N$ times then any row $i$ will tell us the nodes that are connected to that node $i$. If there exists a 0 in any row of $\mathbf{A}^{k}$ where $k\geq N$ then the network is not connected. Formally, a network is connected if this condition is true:
+\begin{equation}
+\mathbf{A}^{k}_{i,j} \neq 0 \quad \mathrm{for} \quad i = 1, ..., N \quad \mathrm{and} \quad j = 1, ..., N \quad \mathrm{where} \quad k\geq N
+\end{equation}
+
+\newpage
+
+Question #2
+----
+
+In a random graph with $N = 5000$ nodes, the linking probability $p = 10^{-4}$.
+
+a) The expected total number of links is defined as:
+\begin{equation}
+\langle L \rangle = p\frac{N(N-1)}{2} = 10^{-4} \frac{5000(5000-1)}{2} \approx 1250
+\end{equation}
+
+b) To categorize this network into the regimes of network evolution we must first define $\langle k \rangle$ as:
+\begin{equation}
+\langle k \rangle = \frac{2\langle L \rangle}{N} = p(N-1) \approx 0.5 
+\end{equation}
+The average node degree $\langle k \rangle < 1$ so this network is in the subcritical regime. This network has no giant component and the clusters  are represented as trees and branches.
+
+c) We must solve for $p_{c}$ in the following equation to find the linking probability $p_{c}$ for a network with 5000 nodes at the critical point.
+\begin{equation}
+p_{c} (5000 - 1) = 1, \quad p_{c} \approx 2 \cdot 10^{-4}
+\end{equation}
+
+d) We must solve for $N'$ in the following equation to find the minimum number of nodes $N'$ that, with very high probability, a random network will have only one component. We will then choose a value for $N'$ for subsequent calculation.
+\begin{equation}
+p(N'-1) > 1 \quad \mathrm{where} \quad p = 10^{-4}, \quad N' \geq 10,002 \quad \mathrm{let} \quad N' = 70,000
+\end{equation}
+
+e) The average degree $\langle k' \rangle$ and average distance $\langle d \rangle$ of the network in 2d is defined as:
+\begin{equation}
+\langle k' \rangle = 10^{-4}(70,000 - 1) \approx 7
+\end{equation}
+\begin{equation}
+\langle d \rangle \approx \frac{\mathrm{ln}(70,000)}{\mathrm{ln}(7)} \approx 5.73
+\end{equation}
+
+
+f) The formula for the degree distribution $P(k)$ of this network is approximated using the Poisson distribution:
+
+\begin{equation}
+P(k) = e^{-70,000}\frac{70,000^{k}}{k!}
+\end{equation}
+
+\newpage
+
+
+
+Question #4
+----
+
+a) The component size distribution $P(s)$ for a random network with average degree $\langle k \rangle_{int} < 1$ can be modeled using the Poisson distribution:
+
+\begin{equation}
+P(s) \approx e^{-\langle k \rangle_{int} s}\frac{(s \langle k \rangle_{int})^{s-1}}{s!}
+\end{equation}
+
+b) To determine the minimal fraction of extroverts $f = \sfrac{N_{ext}}{N}$ needed to connect the network we must first consider what condition needs to be met for a network to be connected. If all nodes have an average degree greater than $\mathrm{ln}N$ then there is a high probability that all nodes are connected to a giant component. This condition marks the point in which a random network enters into a connected regime composed of only the the giant component $(N_{G}=N)$.
+
+\begin{equation}
+\langle k\rangle = \frac{2(L_{int} + L_{ext})}{N} > \mathrm{ln}N
+\quad \mathrm{where} \quad
+L_{int} = \frac{N_{int}k_{int}}{2} \quad \mathrm{and} \quad
+L_{ext} = \frac{N_{ext}k_{ext}}{2}
+\end{equation}
+
+\begin{equation}
+\frac{2(\frac{N_{int}k_{int}}{2}+\frac{N_{ext}k_{ext}}{2})}{N} = \frac{N_{int}k_{int}+N_{ext}k_{ext}}{N} > 1
+\end{equation}
+
+\begin{equation}
+\frac{(N-N_{ext})k_{int} + N_{ext}k_{ext}}{N} > \mathrm{ln}N \quad \mathrm{where} \quad N_{int} = N - N_{ext}
+\end{equation}
+
+\begin{equation}
+\frac{Nk_{int} - N_{ext}k_{int} + N_{ext}k_{ext}}{N} > \mathrm{ln}N
+\end{equation}
+
+\begin{equation}
+k_{int} + f(k_{ext} - k_{int}) > \mathrm{ln}N
+\end{equation}
+
+\begin{equation}
+f > \frac{\mathrm{ln}N -k_{int}}{k_{ext} - k_{int}}
+\end{equation}
+
+
+c) The distance between two introvert nodes $d_{i, i}$ can approximately be found by finding the diamater of the network as shown in equation (23). The average distance between an extrovert and an introvert node $d_{i, e}$ can be modeled by finding the average distance of the network as a whole as shown in equation (24). This network does show the Small World property as $\langle k \rangle > \mathrm{ln}N > 1$.
+
+
+\begin{equation}
+N(d_{max}) \approx \frac{\langle k \rangle^{d_{max}+1}-1}{\langle k \rangle-1} \approx N
+\end{equation}
+
+\begin{equation}
+d_{max} \approx \frac{\mathrm{ln}N}{\mathrm{ln}\langle k \rangle}
+\approx d_{i, i}
+\quad \mathrm{where} \quad \langle k \rangle >> 1
+\end{equation}
+
+\begin{equation}
+\langle d \rangle = \frac{1}{N(N-1)} \times \quad \sum_{
+\mathclap{\substack{i,j=1,N \\
+                    i \ne j
+}}}
+d_{i,j}
+\end{equation}
+
+
+\newpage
+
+Question #5
+----
+
+In 2.12.5:
+
+a) The adjacency matrix $\mathbf{A}$ for Figure 2.21 is defined below. This matrix is in block-diagonal form because no node in set $U$ can link with any other node in set $U$ and likewise for set $V$. This corresponds with the definition of a bipartite graph with two projections.
+\begin{equation}
+\mathbf{A} = 
+\left[
+\begin{array}{*{11}c}
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 & 0 & 0
+\end{array}
+\right]
+\end{equation}
+
+b) The adjacency matrices $\mathbf{A}_{U}$ and $\mathbf{A}_{V}$ for the projects $U$ and $V$ are described as:
+
+\begin{equation}
+\mathbf{A}_{U} = 
+\left[
+\begin{array}{*{6}c}
+0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 & 1 & 0 \\
+1 & 1 & 0 & 1 & 1 & 0 \\
+0 & 1 & 1 & 0 & 1 & 0 \\
+0 & 1 & 1 & 1 & 0 & 1 \\
+0 & 0 & 0 & 0 & 1 & 0 \\
+\end{array}
+\right]
+\end{equation}
+
+\begin{equation}
+\mathbf{A}_{V} = 
+\left[
+\begin{array}{*{6}c}
+0 & 1 & 1 & 0 & 0 \\
+1 & 0 & 1 & 0 & 0 \\
+1 & 1 & 0 & 1 & 1 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+\end{array}
+\right]
+\end{equation}
+
+c) The average degree for the purple nodes $\langle k \rangle_{purple}$ in the bipartite network is $1.\bar{6}$. The average degree for the green nodes in the bipartite network $\langle k \rangle_{green}$ is $2$. 
+
+d) The average degree for the projection $U$ $\langle k \rangle_{U}$ is $2.\bar{3}$. The average degree for projection $V$  $\langle k \rangle_{V}$ is $2$. It is not surprising that these values are different than in 5c. To assert the average degree of a node in the bipartite graph claims nothing about it's average degree in it's own projection. An example of this can be seen where a node in one projection with a single link to a node in a second projection would have a degree of 1 whereas in the first node's own projection it could be connected to hundreds of other nodes.
+
+
+In 2.12.6:
+
+d) An expression connecting $N_{1}$, $N_{2}$ and the average degrees for two sets in a bipartite network, $\langle k \rangle_{1}$, $\langle k \rangle_{2}$ is defined as:
+\begin{equation}
+\frac{L}{N_{1}}=\langle k \rangle_{1}
+\quad \mathrm{and} \quad
+\frac{L}{N_{2}}=\langle k \rangle_{2}
+\quad \mathrm{so} \quad
+N_{1}\langle k \rangle_{1} = N_{2}\langle k \rangle_{2}
+\end{equation}

@@ -1,0 +1,18 @@
+---
+title: "hw03"
+author: "Charles Valentine"
+date: "November 28, 2016 5:30PM"
+header-includes:
+  - \usepackage{xfrac}
+  - \usepackage{mathtools}
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Question #1
+----
+\textit{Note: Python 3 code can be found at the bottom of this document.}
+
